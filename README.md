@@ -1,4 +1,4 @@
-# CS 32 Final Project: Jeopardy
+# CS 32 Final Project: Jeopardy practice app
 ## Background
 Jeopardy! is a popular American trivia game show. When the host finishes reading each question, a member of the production staff manually unlocks the buzzers to allow players to answer. Red lights on the edge of the question screen indicate that the players now can buzz. If players buzz before the buzzers are unlocked, they are locked out for a quarter of a second [source](https://www.jeopardy.com/jbuzz/behind-scenes/how-does-jeopardy-buzzer-work). Because multiple players often know the answer to a question, buzzer timing is a key part of what makes Jeopardy champions succesful. There are two main strategies: timing the buzz to the light and attempting to reduce reaction time, or timing the buzz to the host's voice [source](https://www.jeopardad.com/sample-page/jeopardy-prep/jeopardy-buzzing-strategy/).
 
