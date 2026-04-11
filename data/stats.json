@@ -1,0 +1,94 @@
+{
+  "attempts": [
+    {
+      "clue_id": "514223",
+      "category": "TREATIES",
+      "clue_text": "In 886 this \"Great\" king of Wessex negotiated a treaty with the Danes giving him the southern part of Great Britain",
+      "correct_response": "Alfred the Great",
+      "buzz_delta_ms": 1782.5751999625936,
+      "early_buzz": false,
+      "correct": true
+    },
+    {
+      "clue_id": "332179",
+      "category": "DISABILITY AWARENESS",
+      "clue_text": "She plays deaf pollster Joey Lucas on \"The West Wing\\\"",
+      "correct_response": "Marlee Matlin",
+      "buzz_delta_ms": null,
+      "early_buzz": false,
+      "correct": null
+    },
+    {
+      "clue_id": "251912",
+      "category": "CROONERS",
+      "clue_text": "In 1955, when he crooned \"Darling, Je Vous Aime Beaucoup\", he was \"Unforgettable\\\"",
+      "correct_response": "Nat Cole",
+      "buzz_delta_ms": 9859.124800015707,
+      "early_buzz": false,
+      "correct": true
+    },
+    {
+      "clue_id": "525144",
+      "category": "UNITS OF MEASURE",
+      "clue_text": "A synodic month, on average 29.53059 days, is based primarily on the movement of this",
+      "correct_response": "the Moon",
+      "buzz_delta_ms": 0.40250003803521395,
+      "early_buzz": false,
+      "correct": null
+    },
+    {
+      "clue_id": "298176",
+      "category": "DREAMERS",
+      "clue_text": "According to Plutarch, in the 300s B.C., Persian king Darius dreamed this conqueror would wait on him",
+      "correct_response": "Alexander The Great",
+      "buzz_delta_ms": 3737.1450000209734,
+      "early_buzz": false,
+      "correct": null
+    },
+    {
+      "clue_id": "547973",
+      "category": "\\'90s TV",
+      "clue_text": "The romance of Dr. Joel Fleischman & local pilot Maggie O'Connell was sometimes hot but often chilly on this show",
+      "correct_response": "Northern Exposure",
+      "buzz_delta_ms": 5445.617699995637,
+      "early_buzz": false,
+      "correct": null
+    },
+    {
+      "clue_id": "573432",
+      "category": "TECH TALK",
+      "clue_text": "Aerospace experts are familiar with nanometers, these tiny fractions of a meter",
+      "correct_response": "billionths of a meter",
+      "buzz_delta_ms": 1195.2034999849275,
+      "early_buzz": false,
+      "correct": null
+    },
+    {
+      "clue_id": "560996",
+      "category": "SISTER CITIES",
+      "clue_text": "Boring, Oregon & Dull, Scotland are informal sister communities; some wanted to say g'day to Bland in this foreign nation",
+      "correct_response": "Australia",
+      "buzz_delta_ms": 424.2709000245668,
+      "early_buzz": false,
+      "correct": true
+    },
+    {
+      "clue_id": "617951",
+      "category": "SHOPPING AT THE MALL",
+      "clue_text": "I feel like glamming it up, so let's drop by MAC, which sells these, what the \"C\" stands for",
+      "correct_response": "cosmetics",
+      "buzz_delta_ms": 1389.3185000051744,
+      "early_buzz": false,
+      "correct": true
+    },
+    {
+      "clue_id": "164251",
+      "category": "NOVELS",
+      "clue_text": "This novel concludes, \"After all, tomorrow is another day\"",
+      "correct_response": "Gone with the Wind",
+      "buzz_delta_ms": 3455.403900006786,
+      "early_buzz": false,
+      "correct": true
+    }
+  ]
+}
