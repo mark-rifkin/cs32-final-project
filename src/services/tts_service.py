@@ -2,18 +2,19 @@ import pyttsx3
 
 class TTSService:
     def __init__(self):
-        self.engine = pyttsx3.init()
-        rate = self.engine.getProperty('rate')
-        self.engine.setProperty('rate', rate-50)
+        self.rate_offset = -50
 
     def speak(self, text: str) -> None:
-        preview = text if len(text) <= 80 else f"{text[:77]}..."
-        print(f"[TTS] speak() start: {preview}")
+        engine = None
         try:
-            self.engine.say(text)
-            print("[TTS] queued utterance")
-            self.engine.runAndWait()
-            print("[TTS] runAndWait() completed")
-        except Exception as exc:
-            print(f"[TTS] ERROR: {type(exc).__name__}: {exc}")
-            raise
+            engine = pyttsx3.init()
+            rate = engine.getProperty('rate')
+            engine.setProperty('rate', rate + self.rate_offset)
+            engine.say(text)
+            engine.runAndWait()
+        finally:
+            if engine is not None:
+                try:
+                    engine.stop()
+                except Exception:
+                    pass

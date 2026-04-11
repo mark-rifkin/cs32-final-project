@@ -10,9 +10,7 @@ def main():
     stats = StatsStore()
     ctrl = RoundControl(tts)
 
-    print("Jeopardy Trainer - Console MVP")
-    print("Type q at any prompt to quit.\n")
-
+    print("Podium: a Jeopardy training app (console draft)")
     while True:
         user_input = input("Press Enter for a new clue, or q to quit: ").strip().lower()
         if user_input == "q":

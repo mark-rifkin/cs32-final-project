@@ -89,6 +89,24 @@
       "buzz_delta_ms": 3455.403900006786,
       "early_buzz": false,
       "correct": true
+    },
+    {
+      "clue_id": "456146",
+      "category": "U.S. FLAG ETIQUETTE",
+      "clue_text": "The flag code specifies that a lapel flag pin is to be worn near this body part",
+      "correct_response": "the heart",
+      "buzz_delta_ms": 1324.0732999984175,
+      "early_buzz": false,
+      "correct": null
+    },
+    {
+      "clue_id": "398530",
+      "category": "KID LIT",
+      "clue_text": "A game of hide & seek leads Peter, Susan, Edmund & Lucy into this land that's \"always winter & never Christmas\"",
+      "correct_response": "Narnia",
+      "buzz_delta_ms": 1019.7734999819659,
+      "early_buzz": false,
+      "correct": null
     }
   ]
 }
