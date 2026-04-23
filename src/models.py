@@ -1,5 +1,4 @@
 from dataclasses import dataclass, asdict
-from typing import Optional
 from datetime import date
 
 '''Class for question information, dataclass automatically adds init'''

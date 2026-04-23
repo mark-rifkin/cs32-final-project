@@ -107,6 +107,24 @@
       "buzz_delta_ms": 1019.7734999819659,
       "early_buzz": false,
       "correct": null
+    },
+    {
+      "clue_id": "500607",
+      "category": "IN THE DICTIONARY",
+      "clue_text": "An abactor is defined as one who steals cattle; in the Old West he was called this",
+      "correct_response": "rustler",
+      "buzz_delta_ms": 3183.4679999738,
+      "early_buzz": false,
+      "correct": true
+    },
+    {
+      "clue_id": "586464",
+      "category": "CITY WORDS",
+      "clue_text": "Any gathering place that attracts devotees of a specific topic",
+      "correct_response": "Mecca",
+      "buzz_delta_ms": null,
+      "early_buzz": false,
+      "correct": null
     }
   ]
 }
