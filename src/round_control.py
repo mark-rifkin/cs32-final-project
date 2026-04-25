@@ -1,6 +1,9 @@
 import time
+from pathlib import Path
+
 from src.models import Attempt, Question
 from src.services.tts_service import TTSService
+
 
 class RoundControl:
     EARLY_LOCKOUT_MS = 250
@@ -9,7 +12,7 @@ class RoundControl:
     def __init__(self, tts: TTSService):
         self.tts = tts
 
-    def run(self, question: Question) -> Attempt:
+    def run(self, question: Question, audio_path: Path) -> Attempt:
         print()
         print("=" * 60)
         print(f"{question.category}")
@@ -17,7 +20,7 @@ class RoundControl:
         print("=" * 60)
         print()
 
-        self.tts.speak(question.clue_text)
+        self.tts.debug_double_play(audio_path)
 
         print("\nBuzzer unlocked (press enter to buzz, or type s+enter to skip)")
         unlock_time = time.perf_counter()

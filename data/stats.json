@@ -125,6 +125,96 @@
       "buzz_delta_ms": null,
       "early_buzz": false,
       "correct": null
+    },
+    {
+      "clue_id": "546981",
+      "category": "THE BAKER",
+      "clue_text": "18th c. builder William Baker lent his name to a street most famous as the home of this character",
+      "correct_response": "Sherlock Holmes",
+      "buzz_delta_ms": 1347.8784000035375,
+      "early_buzz": false,
+      "correct": null
+    },
+    {
+      "clue_id": "321757",
+      "category": "SHAKESPEAREAN BEFORE & AFTER",
+      "clue_text": "A Roman statesman desires the ear of a female martial artist from a blaxploitation film",
+      "correct_response": "Antony and Cleopatra Jones",
+      "buzz_delta_ms": null,
+      "early_buzz": false,
+      "correct": null
+    },
+    {
+      "clue_id": "543592",
+      "category": "GOOD SOURCES OF CALCIUM",
+      "clue_text": "When made with calcium sulfate, this soybean curd has lots of calcium, though not lots of flavor",
+      "correct_response": "tofu",
+      "buzz_delta_ms": null,
+      "early_buzz": false,
+      "correct": null
+    },
+    {
+      "clue_id": "491709",
+      "category": "RHYME TIME",
+      "clue_text": "That penny you already used to buy something",
+      "correct_response": "a spent cent",
+      "buzz_delta_ms": null,
+      "early_buzz": false,
+      "correct": null
+    },
+    {
+      "clue_id": "562172",
+      "category": "A FISHY SITUATION",
+      "clue_text": "In addition to having a pretty nifty weapon as its long upper jaw, this toothless fish can swim up to 60 mph",
+      "correct_response": "a swordfish",
+      "buzz_delta_ms": null,
+      "early_buzz": false,
+      "correct": null
+    },
+    {
+      "clue_id": "639915",
+      "category": "THE MACHINE'S BROKEN",
+      "clue_text": "In 1816 these tech-averse craftsmen destroyed John Heathcoat's lace-making machines in Loughborough, England",
+      "correct_response": "Luddites",
+      "buzz_delta_ms": null,
+      "early_buzz": false,
+      "correct": null
+    },
+    {
+      "clue_id": "406701",
+      "category": "THANKS FOR THE MEMOIRS",
+      "clue_text": "This British actress didn't have much nice to say about hubby Philip Roth in her memoir \"Leaving a Doll's House\"",
+      "correct_response": "Claire Bloom",
+      "buzz_delta_ms": null,
+      "early_buzz": false,
+      "correct": null
+    },
+    {
+      "clue_id": "634681",
+      "category": "\"GN\"OWLEDGE",
+      "clue_text": "In \"Where the Wild Things Are\", Maurice Sendak used this past tense verb for what the wild things did with \"their terrible teeth\"",
+      "correct_response": "gnashed",
+      "buzz_delta_ms": 2989.011700032279,
+      "early_buzz": false,
+      "correct": true
+    },
+    {
+      "clue_id": "414926",
+      "category": "WHEEL OF WOMEN",
+      "clue_text": "Barely an equestrian _ A D _ G O _ _ _ _",
+      "correct_response": "Lady Godiva",
+      "buzz_delta_ms": 8284.886899986304,
+      "early_buzz": false,
+      "correct": null
+    },
+    {
+      "clue_id": "123483",
+      "category": "TV TRIVIA",
+      "clue_text": "1950s comedy that was first to be filmed with 3 cameras before a live audience",
+      "correct_response": "I Love Lucy",
+      "buzz_delta_ms": 935.3453000076115,
+      "early_buzz": false,
+      "correct": null
     }
   ]
 }
