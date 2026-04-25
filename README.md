@@ -1,4 +1,29 @@
-# CS 32 Final Project: Jeopardy practice app
+# CS 32 Final Project: Podium: a Jeopardy training app
+# FP Status 
+## Description
+Console implementation of a simple Jeopardy training app ("Podium"). Retrieves questions from an online API, reads them aloud using Microsoft Edge's online text-to-speech service, simulates buzzer, and tracks statistics. 
+
+## Requirements
+Must run locally in Windows 11 (currently, the keypress logic is windows-only, but the GUI implementation might be cross-platform depending on whether I choose desktop or webapp)
+Python package requirements: 
+- requests
+- edge-tts
+- pygame-ce
+
+Tested Python version 3.14.4 via miniconda
+
+To run: open full project in VSCode and run src.main via Run and Debug menu, or use ```python -m src.main``` in a console.  
+
+## Contributors
+ChatGPT used extensively with detailed requests for coding help/implementation, primarily: 
+- Suggested some of the project architecture (ie models classes, services)
+- Implemented upgrade from pyttsx3 to pygame in TTSservice
+- Implemented data cleaning in get_random_question in QuestionService
+- Implemented stats_store class
+- Implemented pre-caching of audio files in main.py and ttsservice
+- Implemented multithreaded keyboard input and early-buzz lockout in round_control.py
+
+# FP design
 ## Background
 Jeopardy! is a popular American trivia game show. When the host finishes reading each question, a member of the production staff manually unlocks the buzzers to allow players to answer. Red lights on the edge of the question screen indicate that the players now can buzz. If players buzz before the buzzers are unlocked, they are locked out for a quarter of a second [source](https://www.jeopardy.com/jbuzz/behind-scenes/how-does-jeopardy-buzzer-work). Because multiple players often know the answer to a question, buzzer timing is a key part of what makes Jeopardy champions succesful. There are two main strategies: timing the buzz to the light and attempting to reduce reaction time, or timing the buzz to the host's voice [source](https://www.jeopardad.com/sample-page/jeopardy-prep/jeopardy-buzzing-strategy/).
 

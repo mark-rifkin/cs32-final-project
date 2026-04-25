@@ -259,6 +259,68 @@
           "correct": true
         }
       ]
+    },
+    {
+      "id": 2,
+      "started_at": "2026-04-24T22:40:14",
+      "attempts": [
+        {
+          "clue_id": "645101",
+          "category": "4-LETTER CITIES",
+          "clue_text": "This city on the Yamuna River in Uttar Pradesh is also home to the Pearl Mosque",
+          "correct_response": "Agra",
+          "buzz_delta_ms": 53.82859997916967,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "172464",
+          "category": "\"BAD\" PEOPLE",
+          "clue_text": "Actress Mary of \"To Kill a Mockingbird & director John of \"Saturday Night Fever\" share this last name",
+          "correct_response": "Badham",
+          "buzz_delta_ms": 793.4403999242932,
+          "early_buzz": true,
+          "correct": true
+        },
+        {
+          "clue_id": "230699",
+          "category": "OFFICES",
+          "clue_text": "It's the British equivalent of our State Department",
+          "correct_response": "the Foreign Office",
+          "buzz_delta_ms": 329.65249998960644,
+          "early_buzz": true,
+          "correct": false
+        },
+        {
+          "clue_id": "251335",
+          "category": "COLLEGES & UNIVERSITIES",
+          "clue_text": "This capital city is the home of Florida State University",
+          "correct_response": "Tallahassee",
+          "buzz_delta_ms": 1500.6719999946654,
+          "early_buzz": true,
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "started_at": "2026-04-24T23:03:38",
+      "attempts": [
+        {
+          "clue_id": "483223",
+          "category": "TV NEWS",
+          "clue_text": "In 2011 Josh Elliott of ESPN became news reader for this ABC show that starts many people's day",
+          "correct_response": "Good Morning America",
+          "buzz_delta_ms": 579.072599997744,
+          "early_buzz": true,
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "started_at": "2026-04-24T23:18:17",
+      "attempts": []
     }
   ]
 }

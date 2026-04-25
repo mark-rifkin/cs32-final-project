@@ -8,6 +8,8 @@ from src.models import Attempt
 
 class StatsStore:
     def __init__(self, path: str = "data/stats.json"):
+        '''Initializes (and creates if nonexistent) json stats storage
+        '''
         self.path = Path(path)
         self.path.parent.mkdir(parents=True, exist_ok=True)
 
@@ -23,9 +25,13 @@ class StatsStore:
         self.path.write_text(json.dumps(data, indent=2), encoding="utf-8")
 
     def start_session(self) -> int:
+        '''Start a stats session. Assigns a new id and adds a new dict to 
+        JSON file for the active session'''
+
         data = self.load()
         sessions = data.get("sessions", [])
 
+        # assign next id. robust to skips in session id if json is corrupted or changed (does not re-assign ids)
         next_id = 1 if not sessions else max(session["id"] for session in sessions) + 1
 
         session = {
@@ -40,7 +46,9 @@ class StatsStore:
         self.current_session_id = next_id
         return next_id
 
+    
     def save_attempt(self, attempt: Attempt) -> None:
+        '''Adds a single attempt to the current session'''
         if self.current_session_id is None:
             raise RuntimeError("No active session. Call start_session() first.")
 
@@ -55,6 +63,7 @@ class StatsStore:
         raise RuntimeError(f"Active session {self.current_session_id} not found.")
 
     def _get_attempts(self, scope: str = "overall") -> list[dict]:
+        '''Internal helper for collecting all session or overall attempts'''
         data = self.load()
         sessions = data.get("sessions", [])
 
@@ -76,6 +85,7 @@ class StatsStore:
         raise ValueError("scope must be 'current' or 'overall'")
 
     def summary_stats(self, scope: str = "overall") -> dict:
+        '''Summary statistics for current or overall attempts'''
         attempts = self._get_attempts(scope)
 
         total_clues = len(attempts)
@@ -112,6 +122,7 @@ class StatsStore:
         }
 
     def summary_text(self, scope: str = "overall") -> str:
+        '''Formatted summary of overall or current session attempts'''
         summary = self.summary_stats(scope)
         title = "Current session summary" if scope == "current" else "Overall summary"
 
