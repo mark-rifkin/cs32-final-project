@@ -224,6 +224,41 @@
       "buzz_delta_ms": 1464.0907999128103,
       "early_buzz": false,
       "correct": null
+    },
+    {
+      "clue_id": "271532",
+      "category": "FILM STARS",
+      "clue_text": "He played Malcolm X in \"When the Chickens Come Home to Roost\" on Broadway & in a 1992 film",
+      "correct_response": "Denzel Washington",
+      "buzz_delta_ms": 3735.8790000434965,
+      "early_buzz": false,
+      "correct": null
+    }
+  ],
+  "sessions": [
+    {
+      "id": 1,
+      "started_at": "2026-04-24T22:19:35",
+      "attempts": [
+        {
+          "clue_id": "238593",
+          "category": "THE 1950s",
+          "clue_text": "The new constitution creating this nation's Fifth Republic was approved Sept. 28, 1958",
+          "correct_response": "France",
+          "buzz_delta_ms": 9257.368099992163,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "490751",
+          "category": "UNUSUAL AMERICAN SPORTS",
+          "clue_text": "In June 2012 a golden retriever named Ricochet hung 10 & won this event for dogs at Coronado Bay resort in San Diego",
+          "correct_response": "surfing",
+          "buzz_delta_ms": 221.32030001375824,
+          "early_buzz": false,
+          "correct": true
+        }
+      ]
     }
   ]
 }

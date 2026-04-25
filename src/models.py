@@ -19,6 +19,6 @@ class Attempt:
     category: str
     clue_text: str
     correct_response: str
-    buzz_delta_ms: float
+    buzz_delta_ms: float | None
     early_buzz: bool
-    correct: bool
+    correct: bool | None

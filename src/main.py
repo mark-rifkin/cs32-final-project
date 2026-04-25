@@ -22,6 +22,7 @@ def main():
     tts = TTSService()
     stats = StatsStore()
     ctrl = RoundControl(tts)
+    stats.start_session()
 
     with ThreadPoolExecutor(max_workers=1) as executor:
         try:
@@ -31,6 +32,8 @@ def main():
             while True:
                 user_input = input("Press Enter for a new clue, or q to quit: ").strip().lower()
                 if user_input == "q":
+                    print(stats.summary_text("current"))
+                    print(stats.summary_text("overall"))
                     break
 
                 try:
