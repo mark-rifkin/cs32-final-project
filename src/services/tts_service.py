@@ -10,7 +10,7 @@ import pygame
 
 
 class TTSService:
-    def __init__(self, voice: str = "en-US-BrianNeural", rate: str = "0%"):
+    def __init__(self, voice: str = "en-US-BrianNeural", rate: str = "-1%"):
         self.voice = voice
         self.rate = rate
         self.cache_dir = Path(tempfile.gettempdir()) / "podium_tts_cache"

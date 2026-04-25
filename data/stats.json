@@ -321,6 +321,82 @@
       "id": 4,
       "started_at": "2026-04-24T23:18:17",
       "attempts": []
+    },
+    {
+      "id": 5,
+      "started_at": "2026-04-24T23:42:46",
+      "attempts": []
+    },
+    {
+      "id": 6,
+      "started_at": "2026-04-24T23:43:24",
+      "attempts": []
+    },
+    {
+      "id": 7,
+      "started_at": "2026-04-24T23:44:55",
+      "attempts": [
+        {
+          "clue_id": "555285",
+          "category": "CLASS OF 1918",
+          "clue_text": "Witchcraft came after graduation from St. Louis' Central High for Agnes Moorehead, Endora on this sitcom",
+          "correct_response": "Bewitched",
+          "buzz_delta_ms": 1101.3368000276387,
+          "early_buzz": false,
+          "correct": false
+        },
+        {
+          "clue_id": "185603",
+          "category": "1983",
+          "clue_text": "At Christmas time parents shelled out a lot of lettuce for these one-of-a-kind dolls",
+          "correct_response": "Cabbage Patch Kids",
+          "buzz_delta_ms": 352.28790005203336,
+          "early_buzz": true,
+          "correct": false
+        },
+        {
+          "clue_id": "513565",
+          "category": "ALTER EGOS",
+          "clue_text": "Diana Prince gets glammed up & becomes this superhero",
+          "correct_response": "Wonder Woman",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        },
+        {
+          "clue_id": "507308",
+          "category": "LONG WORD, SHORT DEFINITION",
+          "clue_text": "Dancer synonym (13)",
+          "correct_response": "terpsichorean",
+          "buzz_delta_ms": 3784.5567000331357,
+          "early_buzz": true,
+          "correct": false
+        },
+        {
+          "clue_id": "565189",
+          "category": "GLASSWARE",
+          "clue_text": "The tall, narrow glass known as a flute is perfect for this beverage, perhaps an Armand de Brignac Brut",
+          "correct_response": "champagne",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "started_at": "2026-04-24T23:51:23",
+      "attempts": [
+        {
+          "clue_id": "648007",
+          "category": "FROM THYME TO TIME",
+          "clue_text": "It consists of two connected oblong lobes lying on either side of the trachea",
+          "correct_response": "the thyroid",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        }
+      ]
     }
   ]
 }
