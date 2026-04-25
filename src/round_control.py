@@ -20,7 +20,7 @@ class RoundControl:
         print("=" * 60)
         print()
 
-        self.tts.debug_double_play(audio_path)
+        self.tts.play_file(audio_path)
 
         print("\nBuzzer unlocked (press enter to buzz, or type s+enter to skip)")
         unlock_time = time.perf_counter()

@@ -215,6 +215,15 @@
       "buzz_delta_ms": 935.3453000076115,
       "early_buzz": false,
       "correct": null
+    },
+    {
+      "clue_id": "241746",
+      "category": "IN THE DICTIONARY",
+      "clue_text": "An interjection that expresses childish delight, or an old form of address that's an alteration of \"goodwife\"",
+      "correct_response": "goody",
+      "buzz_delta_ms": 1464.0907999128103,
+      "early_buzz": false,
+      "correct": null
     }
   ]
 }
