@@ -397,6 +397,199 @@
           "correct": null
         }
       ]
+    },
+    {
+      "id": 9,
+      "started_at": "2026-04-25T01:34:50",
+      "attempts": [
+        {
+          "clue_id": "425285",
+          "category": "A LINE",
+          "clue_text": "The Curzon Line, proposed in 1919, became essentially the boundary between Poland & this country in 1945",
+          "correct_response": "Russia (the Soviet Union)",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        },
+        {
+          "clue_id": "336505",
+          "category": "CELEBRITY RHYME TIME",
+          "clue_text": "Poet Ezra's squeals",
+          "correct_response": "Pound's sounds",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        },
+        {
+          "clue_id": "639829",
+          "category": "WORLD HISTORY",
+          "clue_text": "This collective defense treaty between 8 nations was signed in Poland in 1955",
+          "correct_response": "the Warsaw Pact",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "started_at": "2026-04-25T01:43:57",
+      "attempts": []
+    },
+    {
+      "id": 11,
+      "started_at": "2026-04-25T01:44:29",
+      "attempts": []
+    },
+    {
+      "id": 12,
+      "started_at": "2026-04-25T01:44:36",
+      "attempts": [
+        {
+          "clue_id": "571140",
+          "category": "WE MEAN BID-NESS",
+          "clue_text": "\"Only one for sale, as I need the other one to live\"; in 1999 bids got up to $5 million for a kidney before this site stopped things",
+          "correct_response": "eBay",
+          "buzz_delta_ms": 1062.1871000621468,
+          "early_buzz": true,
+          "correct": true
+        },
+        {
+          "clue_id": "205603",
+          "category": "THE OLD WEST",
+          "clue_text": "He was a buffalo hunter before he hunted down & shot Billy the Kid",
+          "correct_response": "Pat Garrett",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        },
+        {
+          "clue_id": "154473",
+          "category": "AMERICANA",
+          "clue_text": "The U.S. flag code says red, white, and blue bunting should always feature this color on top",
+          "correct_response": "blue",
+          "buzz_delta_ms": 1407.3967000003904,
+          "early_buzz": false,
+          "correct": false
+        },
+        {
+          "clue_id": "366506",
+          "category": "MAP HAPPY",
+          "clue_text": "\"Zone\" in on this country important to world commerce",
+          "correct_response": "Panama",
+          "buzz_delta_ms": 336.8720000144094,
+          "early_buzz": false,
+          "correct": false
+        },
+        {
+          "clue_id": "321873",
+          "category": "CLASSIC AMERICAN MUSIC",
+          "clue_text": "He toured with the Texas Medley Quartette before going solo & becoming the king of ragtime",
+          "correct_response": "Scott Joplin",
+          "buzz_delta_ms": 350.9479999775067,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "553451",
+          "category": "A BLANK EXPRESSION",
+          "clue_text": "Alluding to a pompous puppet character: \"Pleased as ____\"",
+          "correct_response": "Punch",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        },
+        {
+          "clue_id": "125081",
+          "category": "TELEVISION",
+          "clue_text": "\"The Gong Show's\" \"Chuckie Baby\"",
+          "correct_response": "Chuck Barris",
+          "buzz_delta_ms": 924.0409999620169,
+          "early_buzz": false,
+          "correct": false
+        },
+        {
+          "clue_id": "501277",
+          "category": "TENNIS TIPS",
+          "clue_text": "Getting close to the net gives you better angles on your volleys but leaves you vulnerable to this\u2014look up!",
+          "correct_response": "a lob",
+          "buzz_delta_ms": 374.3903998984024,
+          "early_buzz": false,
+          "correct": false
+        },
+        {
+          "clue_id": "442395",
+          "category": "WRITERS' MIDDLE NAMES",
+          "clue_text": "A Pulitzer Prize-winning poet: St. Vincent",
+          "correct_response": "(Edna St. Vincent) Millay",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        },
+        {
+          "clue_id": "293140",
+          "category": "WHAT FOODS THESE MORSELS BE",
+          "clue_text": "Put a feather in your cap if you know that fischietti is a type of this hollow Italian pasta",
+          "correct_response": "Macaroni",
+          "buzz_delta_ms": 622.8100000880659,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "510949",
+          "category": "O..............K, THEN",
+          "clue_text": "A tapering, 4-sided shaft of stone with a pyramidal apex",
+          "correct_response": "obelisk",
+          "buzz_delta_ms": 213.88039994053543,
+          "early_buzz": false,
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "started_at": "2026-04-25T10:35:27",
+      "attempts": []
+    },
+    {
+      "id": 14,
+      "started_at": "2026-04-25T10:36:23",
+      "attempts": [
+        {
+          "clue_id": "451107",
+          "category": "\"STANDING\" ROOM ONLY",
+          "clue_text": "Enthusiastic applause by an audience on its feet",
+          "correct_response": "a standing ovation",
+          "buzz_delta_ms": 503.5368000390008,
+          "early_buzz": false,
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "started_at": "2026-04-25T10:38:36",
+      "attempts": []
+    },
+    {
+      "id": 16,
+      "started_at": "2026-04-27T19:07:44",
+      "attempts": []
+    },
+    {
+      "id": 17,
+      "started_at": "2026-04-27T19:07:58",
+      "attempts": []
+    },
+    {
+      "id": 18,
+      "started_at": "2026-04-27T19:08:23",
+      "attempts": []
+    },
+    {
+      "id": 19,
+      "started_at": "2026-04-27T19:09:35",
+      "attempts": []
     }
   ]
 }

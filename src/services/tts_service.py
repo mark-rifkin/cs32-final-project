@@ -70,5 +70,8 @@ class TTSService:
         audio_path = self.prepare(text, cache_key)
         self.play_file(audio_path)
 
+    def stop_playback(self) -> None:
+        pygame.mixer.music.stop()
+        
     def close(self) -> None:
         pygame.mixer.quit()
