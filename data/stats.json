@@ -590,6 +590,240 @@
       "id": 19,
       "started_at": "2026-04-27T19:09:35",
       "attempts": []
+    },
+    {
+      "id": 20,
+      "started_at": "2026-04-27T19:16:48",
+      "attempts": []
+    },
+    {
+      "id": 21,
+      "started_at": "2026-04-27T19:21:10",
+      "attempts": []
+    },
+    {
+      "id": 22,
+      "started_at": "2026-04-27T20:03:47",
+      "attempts": []
+    },
+    {
+      "id": 23,
+      "started_at": "2026-04-27T20:09:48",
+      "attempts": []
+    },
+    {
+      "id": 24,
+      "started_at": "2026-04-27T20:11:14",
+      "attempts": [
+        {
+          "clue_id": "403657",
+          "category": "IN THE MIDDLE OF THE STATE",
+          "clue_text": "This state is powered by one \"AMP\"",
+          "correct_response": "New Hampshire",
+          "buzz_delta_ms": 597.1050000516698,
+          "early_buzz": false,
+          "correct": false
+        },
+        {
+          "clue_id": "636227",
+          "category": "I'M FEELING POSITIVE",
+          "clue_text": "The sum of these 2 positive integers is a 2-digit number, but when the 2 are multiplied, the product is a single digit",
+          "correct_response": "1 & 9",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "550631",
+          "category": "ETYMOLOGY",
+          "clue_text": "This herbivore's name is from Greek words meaning \"nose\" & \"horn\"",
+          "correct_response": "a rhinoceros",
+          "buzz_delta_ms": 432.295500067994,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "623142",
+          "category": "2 BOOKS IN ONE",
+          "clue_text": "\"Bleak Expectations\"",
+          "correct_response": "Great Expectations & Bleak House",
+          "buzz_delta_ms": 1254.9352999776602,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "627927",
+          "category": "SCIENCE",
+          "clue_text": "When boiling water, energy absorbed that escapes as vapor is this type of heat, from Latin latere, \"to hide\"",
+          "correct_response": "latent",
+          "buzz_delta_ms": 536.1245999811217,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "330621",
+          "category": "BEFORE & AFTER",
+          "clue_text": "Star of \"The Exorcist\" who disappears from the Maryland woods in a scary 1999 film",
+          "correct_response": "Linda Blair Witch Project",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "started_at": "2026-04-27T20:17:08",
+      "attempts": []
+    },
+    {
+      "id": 26,
+      "started_at": "2026-04-27T20:48:17",
+      "attempts": [
+        {
+          "clue_id": "464240",
+          "category": "MY SON, THE DOCTOR",
+          "clue_text": "This man who triumphed over polio in 1955 said his mother had no schooling & lived her ambitions through her kids",
+          "correct_response": "(Jonas) Salk",
+          "buzz_delta_ms": 774.9679000116885,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "626271",
+          "category": "THE THIRD WORD",
+          "clue_text": "...of \"The Star-Spangled Banner\"",
+          "correct_response": "can",
+          "buzz_delta_ms": 2604.5335000380874,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "352518",
+          "category": "THERE'S A SUCKER...",
+          "clue_text": "Sound Bites Lollipops transmit sounds & radio signals into your head when you touch the pops to these",
+          "correct_response": "teeth",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        },
+        {
+          "clue_id": "308476",
+          "category": "AMERICAN NICKNAMES",
+          "clue_text": "New York's former \"Senator Pothole\"",
+          "correct_response": "Alfonse D'Amato",
+          "buzz_delta_ms": 1858.6763000348583,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "484047",
+          "category": "THE GRAMMYS",
+          "clue_text": "Of the more than 75 competitive categories, this one does not cite the title of any album, song or other project",
+          "correct_response": "Best New Artist",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        },
+        {
+          "clue_id": "369985",
+          "category": "NEIL DOWN",
+          "clue_text": "Neil Tennant is half of this British duo whose '80s hits include \"West End Girls\"",
+          "correct_response": "Pet Shop Boys",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        },
+        {
+          "clue_id": "564800",
+          "category": "THE HUMAN BODY",
+          "clue_text": "Steam burns can be nasty\u2014the vapor can hurt deeper layers of the skin because it can pass through these holes in the skin",
+          "correct_response": "pores",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        },
+        {
+          "clue_id": "299868",
+          "category": "FROM A TO Y",
+          "clue_text": "Info on the aurora australis & eclipses are included in this section of the World Almanac",
+          "correct_response": "astronomy",
+          "buzz_delta_ms": 263.85620003566146,
+          "early_buzz": true,
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "started_at": "2026-04-27T21:08:43",
+      "attempts": []
+    },
+    {
+      "id": 28,
+      "started_at": "2026-04-27T21:09:06",
+      "attempts": []
+    },
+    {
+      "id": 29,
+      "started_at": "2026-04-27T21:12:36",
+      "attempts": []
+    },
+    {
+      "id": 30,
+      "started_at": "2026-04-27T21:12:59",
+      "attempts": []
+    },
+    {
+      "id": 31,
+      "started_at": "2026-04-27T21:15:02",
+      "attempts": [
+        {
+          "clue_id": "153545",
+          "category": "SHAKESPEAREAN ROYALTY",
+          "clue_text": "Play in which the king of Naples is shipwrecked by a sorcerer",
+          "correct_response": "Tempest",
+          "buzz_delta_ms": 392.4193999264389,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "374447",
+          "category": "ON THE GO",
+          "clue_text": "In 1775 Daniel Boone & 30 expert woodsmen marked this 200-mile trail from Virginia to Kentucky",
+          "correct_response": "Wilderness Road",
+          "buzz_delta_ms": 207.62180001474917,
+          "early_buzz": false,
+          "correct": false
+        },
+        {
+          "clue_id": "561383",
+          "category": "YOU'VE GOT CLASS",
+          "clue_text": "Let's muscle in some biology with this muscle in the upper arm; its name comes from Latin words for \"2\" & \"head\"",
+          "correct_response": "a bicep",
+          "buzz_delta_ms": 133.11840000096709,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "216620",
+          "category": "PAPER",
+          "clue_text": "The processed wood used to make paper; magazines of the 1930s got their nickname from it",
+          "correct_response": "pulp",
+          "buzz_delta_ms": 217.81770000234246,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "145273",
+          "category": "BUSINESS LINGO",
+          "clue_text": "Over-the-counter stocks are indexed on the automated quote system known by this acronym",
+          "correct_response": "NASDAQ",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        }
+      ]
     }
   ]
 }
