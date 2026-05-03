@@ -1,6 +1,13 @@
 from __future__ import annotations
 
+"""Shared colors, metrics, and stylesheet helpers for the GUI.
+
+This file intentionally keeps theme logic in one place so the rest of the GUI
+code can focus on behavior instead of hard-coded pixel values and colors.
+"""
+
 from dataclasses import dataclass
+
 from PySide6.QtCore import QSize
 
 
@@ -20,11 +27,14 @@ COLORS = {
 
 
 def clamp(value: float, low: int, high: int) -> int:
+    """Clamp a computed dimension into a reasonable range."""
     return max(low, min(int(value), high))
 
 
 @dataclass(frozen=True)
 class Metrics:
+    """Window-size-derived measurements used across widgets."""
+
     outer_margin: int
     gap: int
     rail_width: int
@@ -48,7 +58,6 @@ class Metrics:
     side_dot_size: int
     side_dot_gap: int
 
-    action_w: int
     action_h: int
     buzz_h: int
     button_radius: int
@@ -62,6 +71,7 @@ class Metrics:
 
 
 def metrics_for(size: QSize) -> Metrics:
+    """Compute responsive sizing values from the current window size."""
     w = max(size.width(), 900)
     h = max(size.height(), 620)
     short = min(w, h)
@@ -90,7 +100,6 @@ def metrics_for(size: QSize) -> Metrics:
         side_dot_size=clamp(short * 0.0045, 3, 5),
         side_dot_gap=clamp(short * 0.0045, 3, 5),
 
-        action_w=clamp(w * 0.13, 130, 170),
         action_h=clamp(h * 0.12, 88, 118),
         buzz_h=clamp(h * 0.15, 104, 145),
         button_radius=clamp(short * 0.03, 18, 28),
@@ -139,11 +148,13 @@ def pill_qss(m: Metrics, fg: str) -> str:
     """
 
 
-def action_button_qss(m: Metrics, fg: str | None = None) -> str:
+def action_button_qss(m: Metrics, fg: str | None = None, bg: str | None = None) -> str:
+    """Standard button style for the right action rail."""
     fg = fg or COLORS["text"]
+    bg = bg or COLORS["panel"]
     return f"""
     QPushButton {{
-        background:{COLORS['panel']};
+        background:{bg};
         color:{fg};
         border:none;
         border-radius:{m.button_radius}px;
@@ -151,13 +162,13 @@ def action_button_qss(m: Metrics, fg: str | None = None) -> str:
         font-weight:700;
     }}
     QPushButton:hover {{
-        background:{COLORS['panel_hover']};
+        background:{bg};
     }}
     QPushButton:pressed {{
-        background:{COLORS['panel_pressed']};
+        background:{bg};
     }}
     QPushButton:disabled {{
-        background:{COLORS['panel']};
+        background:{bg};
         color:{fg};
     }}
     """

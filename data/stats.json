@@ -824,6 +824,728 @@
           "correct": null
         }
       ]
+    },
+    {
+      "id": 32,
+      "started_at": "2026-04-27T21:42:17",
+      "attempts": [
+        {
+          "clue_id": "304607",
+          "category": "NICE BUNS!",
+          "clue_text": "This bun named for a London neighborhood resembles the American cinnamon roll",
+          "correct_response": "Chelsea bun",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        },
+        {
+          "clue_id": "349251",
+          "category": "\"L.P.\"s",
+          "clue_text": "For the Hyundai Accent, it's just under $10,000",
+          "correct_response": "list price",
+          "buzz_delta_ms": 1144.7541000088677,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "537824",
+          "category": "THE DRUMMER SINGS",
+          "clue_text": "Meg White stepped out from behind the kit to croon \"In The Cold, Cold Night\" for this duo",
+          "correct_response": "the White Stripes",
+          "buzz_delta_ms": 1538.7195999501273,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "463212",
+          "category": "\\'80s TV",
+          "clue_text": "John Goodman played the husband of the title character on this sitcom that debuted in 1988",
+          "correct_response": "Roseanne",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        },
+        {
+          "clue_id": "154684",
+          "category": "TV TRIVIA",
+          "clue_text": "Janet Louise Johnson & Emma Samms have replaced her in different series",
+          "correct_response": "Pamela Sue Martin",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        },
+        {
+          "clue_id": "190128",
+          "category": "MEN",
+          "clue_text": "This talk show host said \"I'm not going after Johnny's crowd, I'm going after Johnny's crowd's kids\"",
+          "correct_response": "Arsenio Hall",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        },
+        {
+          "clue_id": "249496",
+          "category": "COLONIAL AMERICA",
+          "clue_text": "By the 1630s the Virginia Company exported 1.5 million pounds of this crop a year",
+          "correct_response": "tobacco",
+          "buzz_delta_ms": 512.7786999801174,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "255723",
+          "category": "BUSINESS & INDUSTRY",
+          "clue_text": "Aluminum Company of America, popularly called this, was the first industrial user of power from Niagara Falls",
+          "correct_response": "Alcoa",
+          "buzz_delta_ms": 488.98989998269826,
+          "early_buzz": true,
+          "correct": true
+        },
+        {
+          "clue_id": "226982",
+          "category": "THE MOVIES",
+          "clue_text": "Film in which Humphrey Bogart said, \"I remember every detail. The Germans wore gray. You wore blue.\"",
+          "correct_response": "Casablanca",
+          "buzz_delta_ms": 244.81539998669177,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "388980",
+          "category": "AN ATTEMPT AT ALLITERATION",
+          "clue_text": "\"Christmas Carol\", Bob's boy, sickly sort",
+          "correct_response": "Tiny Tim",
+          "buzz_delta_ms": 405.6149999378249,
+          "early_buzz": false,
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "started_at": "2026-04-28T21:26:27",
+      "attempts": [
+        {
+          "clue_id": "374417",
+          "category": "COLLEGES & UNIVERSITIES",
+          "clue_text": "This school's Bruins play their home football games at the Rose Bowl",
+          "correct_response": "UCLA",
+          "buzz_delta_ms": 1887.0626001153141,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "260621",
+          "category": "WORLD WAR II",
+          "clue_text": "On Nov. 26, 1941 a Japanese task force left the Kuril Islands to attack this American site",
+          "correct_response": "Pearl Harbor",
+          "buzz_delta_ms": 326.48160005919635,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "478578",
+          "category": "WORD & PHRASE ORIGINS",
+          "clue_text": "This 4-word phrase meaning natural selection was coined by philosopher Herbert Spencer, not Darwin",
+          "correct_response": "survival of the fittest",
+          "buzz_delta_ms": 313.2305999752134,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "362298",
+          "category": "COME HERE OFTEN?",
+          "clue_text": "For our final fling, let's head off to Loch Sunart in this famous northern region of Scotland",
+          "correct_response": "the Highlands",
+          "buzz_delta_ms": 4647.786600049585,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "130888",
+          "category": "SCIENCE",
+          "clue_text": "Intact DNA was recently extracted from one of these ancient \"royal relics\"",
+          "correct_response": "mummy",
+          "buzz_delta_ms": 414.7706001531333,
+          "early_buzz": false,
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "started_at": "2026-04-29T14:10:10",
+      "attempts": [
+        {
+          "clue_id": "624700",
+          "category": "THE PIPE ORGAN",
+          "clue_text": "Organ music is often written on 3 of these sets of lines, the lowest one for the pedal part",
+          "correct_response": "a staff",
+          "buzz_delta_ms": 578.47879990004,
+          "early_buzz": false,
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "started_at": "2026-05-01T23:53:48",
+      "attempts": [
+        {
+          "clue_id": "177858",
+          "category": "PROVERBS",
+          "clue_text": "\"Curses, like\", these, \"come home to roost\"",
+          "correct_response": "chickens",
+          "buzz_delta_ms": 3680.988200008869,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "220534",
+          "category": "CATS & DOGS",
+          "clue_text": "Prince Charles could tell you the Sealyham terrier was developed in this part of the British Isles",
+          "correct_response": "Wales",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        },
+        {
+          "clue_id": "624024",
+          "category": "QUITE A FOX",
+          "clue_text": "Former teacher Virginia Foxx is the U.S. rep from this state's 5th district which includes Tobaccoville & Winston-Salem",
+          "correct_response": "North Carolina",
+          "buzz_delta_ms": 303.82629996165633,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "397191",
+          "category": "THE JEP-TONES WORLD TOUR 2006",
+          "clue_text": "After a stint with the Maharishi, the group tries Kaballah with this singer whose hits include \"Beautiful Stranger\"",
+          "correct_response": "Madonna",
+          "buzz_delta_ms": 3170.8937999792397,
+          "early_buzz": false,
+          "correct": false
+        },
+        {
+          "clue_id": "545058",
+          "category": "20th CENTURY WORDS",
+          "clue_text": "This word for a labor addict dates to 1947",
+          "correct_response": "a workaholic",
+          "buzz_delta_ms": 225.60860007070005,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "620979",
+          "category": "GAITS",
+          "clue_text": "The name of this gait between a trot & a gallop likely derives from an English pilgrimage site",
+          "correct_response": "a canter",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "started_at": "2026-05-03T15:56:15",
+      "attempts": [
+        {
+          "clue_id": "205760",
+          "category": "NOTORIOUS",
+          "clue_text": "Murder victim Elizabeth Short was given this flowery nickname for always dressing in black",
+          "correct_response": "Black Dahlia",
+          "buzz_delta_ms": 765.1009999681264,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "463615",
+          "category": "ROMAN 'ROUND MYTHOLOGY",
+          "clue_text": "This blacksmith was lame\u2014physically, not mythically\u2014the only physically imperfect major Roman god",
+          "correct_response": "Vulcan",
+          "buzz_delta_ms": 620.0991000514477,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "416592",
+          "category": "WHAT A FAMOUS HORSE RACE!",
+          "clue_text": "& away they go... This horse who was 1st on TV in 1949 leads early... Its masked jockey seems to be saying \"Hi yo\" something",
+          "correct_response": "Silver",
+          "buzz_delta_ms": 2552.796100033447,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "211556",
+          "category": "THE HUMAN BODY",
+          "clue_text": "Goiters may develop when this gland is either too active, or not active enough",
+          "correct_response": "the thyroid",
+          "buzz_delta_ms": 590.2295999694616,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "203331",
+          "category": "ARCHAEOLOGY",
+          "clue_text": "The term Chalcolithic Age refers to the transition time between the use of this & copper",
+          "correct_response": "stone",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "started_at": "2026-05-03T16:42:14",
+      "attempts": [
+        {
+          "clue_id": "414242",
+          "category": "WORDS IN NOVEMBER",
+          "clue_text": "3-letter synonym for caviar",
+          "correct_response": "roe",
+          "buzz_delta_ms": 767.5271998159587,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "343071",
+          "category": "\"SH\"!",
+          "clue_text": "The lives of tenant farmers called these are documented in the 1941 book \"Let Us Now Praise Famous Men\"",
+          "correct_response": "sharecroppers",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        },
+        {
+          "clue_id": "650200",
+          "category": "WEBSITES",
+          "clue_text": "A 2006 WSJ article described this website as having \"row after row of blue... hyperlinks & nary another color or graphic in sight\"",
+          "correct_response": "Craigslist",
+          "buzz_delta_ms": 479.6608001925051,
+          "early_buzz": false,
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "started_at": "2026-05-03T16:57:14",
+      "attempts": [
+        {
+          "clue_id": "235270",
+          "category": "MUSIC",
+          "clue_text": "These parade pieces may be written in 2/4, 4/4 or 6/8 time & Sousa was King of them",
+          "correct_response": "marches",
+          "buzz_delta_ms": 641.154000069946,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "228138",
+          "category": "CEMETERIES",
+          "clue_text": "This city's Pere-Lachaise Cemetery is the final resting place of Oscar Wilde & Edith Piaf",
+          "correct_response": "Paris",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        },
+        {
+          "clue_id": "313303",
+          "category": "LANDMARKS",
+          "clue_text": "They say no man is an island, but this president is one in the Potomac",
+          "correct_response": "Teddy Roosevelt Island",
+          "buzz_delta_ms": 602.5992999784648,
+          "early_buzz": false,
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "started_at": "2026-05-03T16:59:49",
+      "attempts": [
+        {
+          "clue_id": "389383",
+          "category": "CHINESE REGIONAL CAPITALS",
+          "clue_text": "Chengdu is the hot & spicy capital of this province that lends its name to a hot & spicy Chinese food variety",
+          "correct_response": "Szechuan",
+          "buzz_delta_ms": 1115.8837999682873,
+          "early_buzz": false,
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "started_at": "2026-05-03T17:00:55",
+      "attempts": []
+    },
+    {
+      "id": 41,
+      "started_at": "2026-05-03T17:06:35",
+      "attempts": [
+        {
+          "clue_id": "467802",
+          "category": "THE THEAT-\"R\"",
+          "clue_text": "According to the title of a Tom Stoppard play, these 2 attendant lords \"are Dead\"",
+          "correct_response": "Rosencrantz & Guildenstern",
+          "buzz_delta_ms": 382.97809986397624,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "451198",
+          "category": "WHATEVER",
+          "clue_text": "It's the hotel service of folding back your blanket for bed\u2014& how about a pillow mint?",
+          "correct_response": "turndown",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "started_at": "2026-05-03T17:12:23",
+      "attempts": [
+        {
+          "clue_id": "504607",
+          "category": "YELLOWSTONE NATIONAL PARK",
+          "clue_text": "Yellowstone has the majority of the world's geysers, including this one that reliably erupts about 17 times a day",
+          "correct_response": "Old Faithful",
+          "buzz_delta_ms": 500.8731000125408,
+          "early_buzz": false,
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "started_at": "2026-05-03T17:30:00",
+      "attempts": [
+        {
+          "clue_id": "148984",
+          "category": "LANDMARKS",
+          "clue_text": "Edward VII Park & St. George's Castle sound like they should be in London, but they're in this Iberian capital",
+          "correct_response": "Lisbon",
+          "buzz_delta_ms": 1521.3313000276685,
+          "early_buzz": false,
+          "correct": false
+        },
+        {
+          "clue_id": "476323",
+          "category": "POLITICAL TERMS",
+          "clue_text": "19th c. reports on horse races used this 2-word term to mean horses that were in the field but didn't finish high",
+          "correct_response": "also rans",
+          "buzz_delta_ms": 898.8411999307573,
+          "early_buzz": false,
+          "correct": false
+        },
+        {
+          "clue_id": "574282",
+          "category": "NEW TESTAMENT QUOTES",
+          "clue_text": "\"For as in\" him \"all die, even so in Christ shall all be made alive\"",
+          "correct_response": "Adam",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        },
+        {
+          "clue_id": "484702",
+          "category": "FROM THE GREEK",
+          "clue_text": "Both \"apothecary\" & this other synonym for a drugstore come from the Greek",
+          "correct_response": "pharmacy",
+          "buzz_delta_ms": 361.74670001491904,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "293349",
+          "category": "FUN WITH WORDS",
+          "clue_text": "Gymnastic phrase signifying deep affection LO head VE heels",
+          "correct_response": "head over heels in love",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        },
+        {
+          "clue_id": "263203",
+          "category": "MYTHOLOGY",
+          "clue_text": "After his sight was restored, this hunter lived on Crete with Artemis",
+          "correct_response": "Orion",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "started_at": "2026-05-03T17:33:06",
+      "attempts": [
+        {
+          "clue_id": "255373",
+          "category": "NUTRITION",
+          "clue_text": "This vitamin promotes good vision by generating pigments needed by the retina",
+          "correct_response": "vitamin A",
+          "buzz_delta_ms": 203.66589981131256,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "577675",
+          "category": "LIBRARIES",
+          "clue_text": "For her work with libraries & literacy, a promenade outside a library at SMU is named in honor of this first lady",
+          "correct_response": "Laura Bush",
+          "buzz_delta_ms": 496.37870001606643,
+          "early_buzz": false,
+          "correct": false
+        },
+        {
+          "clue_id": "278588",
+          "category": "THE BODY HUMAN",
+          "clue_text": "When a woman is born, these reproductive organs contain about 2 million potential eggs",
+          "correct_response": "Ovaries",
+          "buzz_delta_ms": 516.8756998609751,
+          "early_buzz": false,
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "started_at": "2026-05-03T18:40:31",
+      "attempts": []
+    },
+    {
+      "id": 46,
+      "started_at": "2026-05-03T18:41:06",
+      "attempts": []
+    },
+    {
+      "id": 47,
+      "started_at": "2026-05-03T18:43:14",
+      "attempts": [
+        {
+          "clue_id": "343156",
+          "category": "LITTLE SHOP OF HORRORS",
+          "clue_text": "In this 1967 Ira Levin novel, Satan fathers a child with a young Manhattan woman",
+          "correct_response": "Rosemary's Baby",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        },
+        {
+          "clue_id": "501180",
+          "category": "LEO, THE POPE",
+          "clue_text": "Leo I declared that papal power was granted by Jesus to this man alone & passed on to his successors",
+          "correct_response": "(Saint) Peter",
+          "buzz_delta_ms": 299.6023001614958,
+          "early_buzz": false,
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "started_at": "2026-05-03T18:44:38",
+      "attempts": [
+        {
+          "clue_id": "569577",
+          "category": "A LITTLE TROUBLE WITH NAMES",
+          "clue_text": "The Swiss guy who shot the arrow\u2014they played his overture for a western hero\u2014that hero's horse...darn it, hi-yo what?",
+          "correct_response": "Silver",
+          "buzz_delta_ms": 1027.3960998747498,
+          "early_buzz": false,
+          "correct": false
+        },
+        {
+          "clue_id": "361966",
+          "category": "COLLEGES & UNIVERSITIES",
+          "clue_text": "Founded in 1842, Willamete University in this state is the oldest university west of the Rockies",
+          "correct_response": "Oregon",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "started_at": "2026-05-03T18:50:14",
+      "attempts": []
+    },
+    {
+      "id": 50,
+      "started_at": "2026-05-03T18:51:52",
+      "attempts": [
+        {
+          "clue_id": "170116",
+          "category": "FANTASTIC TV",
+          "clue_text": "She played Wonder Woman's sister before earning an Oscar nomination for \"Terms of Endearment\"",
+          "correct_response": "Debra Winger",
+          "buzz_delta_ms": 3698.481900151819,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "274038",
+          "category": "AWARDS",
+          "clue_text": "His \"New Hampshire: A Poem With Notes and Grace Notes\" won a 1924 Pulitzer Prize",
+          "correct_response": "Robert Frost",
+          "buzz_delta_ms": null,
+          "early_buzz": true,
+          "correct": null
+        },
+        {
+          "clue_id": "642842",
+          "category": "KICKIN' BRASS",
+          "clue_text": "Needing a theme for his new show, Larry David chose \"Frolic\", featuring this instrument; the piece debuted in a 1974 Italian film",
+          "correct_response": "a tuba",
+          "buzz_delta_ms": 305.38749997504056,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "215321",
+          "category": "U.S. COINS",
+          "clue_text": "Winged Liberty head dimes, minted from 1916 to 1945, were also known by this name",
+          "correct_response": "Mercury dimes",
+          "buzz_delta_ms": 372.75100010447204,
+          "early_buzz": false,
+          "correct": false
+        },
+        {
+          "clue_id": "383954",
+          "category": "DON'T BUG ME",
+          "clue_text": "The larvae of the Ichneumon wasp develop inside the body of these arachnids",
+          "correct_response": "spiders",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        },
+        {
+          "clue_id": "222983",
+          "category": "MEN OF LETTER",
+          "clue_text": "He's credited with establishing the world's largest fingerprint file",
+          "correct_response": "J. Edgar Hoover",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        },
+        {
+          "clue_id": "395815",
+          "category": "POP CULTURE",
+          "clue_text": "Professor William Marston created a lie detector & this comic-book heroine who used a similar device",
+          "correct_response": "Wonder Woman",
+          "buzz_delta_ms": null,
+          "early_buzz": true,
+          "correct": null
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "started_at": "2026-05-03T19:01:25",
+      "attempts": [
+        {
+          "clue_id": "458799",
+          "category": "\"TIME\"LY WORDS",
+          "clue_text": "Arrangement in which employees set their own work schedules, especially their starting & finishing hours",
+          "correct_response": "flex time",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        },
+        {
+          "clue_id": "436487",
+          "category": "AROUND THE HOUSE WITH SIMPLE MACHINES",
+          "clue_text": "(Sarah of the Clue Crew presses garlic.) A garlic press consists of two second-class levers, in which the handles provide the effort, the garlic is the load & the pivot point serves as this",
+          "correct_response": "a fulcrum",
+          "buzz_delta_ms": 254.806499928236,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "360534",
+          "category": "MERRIAM-WEBSTER'S COLLEGIATE DICTIONARY",
+          "clue_text": "The inclusion of this trademark toxin should raise a few eyebrows, or rather, freeze them in place",
+          "correct_response": "Botox",
+          "buzz_delta_ms": 497.00319999828935,
+          "early_buzz": false,
+          "correct": false
+        },
+        {
+          "clue_id": "257799",
+          "category": "LANGUAGES",
+          "clue_text": "Lingala is a language spoken from Kinshasa to Kisangani in this country",
+          "correct_response": "Zaire",
+          "buzz_delta_ms": 1961.0715000890195,
+          "early_buzz": false,
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "started_at": "2026-05-03T19:16:15",
+      "attempts": [
+        {
+          "clue_id": "580022",
+          "category": "& THEN WHAT HAPPENED?",
+          "clue_text": "Mounted French knights massed in force at this 1415 battle site... & then learned the deadly power of English longbows",
+          "correct_response": "Agincourt",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        },
+        {
+          "clue_id": "422805",
+          "category": "BUGS",
+          "clue_text": "Give it a month & the may beetle becomes known by this 7-letter name",
+          "correct_response": "a junebug",
+          "buzz_delta_ms": 297.59959992952645,
+          "early_buzz": true,
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": 53,
+      "started_at": "2026-05-03T19:21:37",
+      "attempts": [
+        {
+          "clue_id": "249192",
+          "category": "MYTHOLOGY",
+          "clue_text": "Among this trio of sisters, only Stheno & Euryale were immortal; Medusa was not",
+          "correct_response": "the Gorgons",
+          "buzz_delta_ms": 310.910000000149,
+          "early_buzz": false,
+          "correct": false
+        },
+        {
+          "clue_id": "575614",
+          "category": "5 CLICKS",
+          "clue_text": "It's Internet content designed to get you to navigate to a website where you may possibly be disappointed",
+          "correct_response": "clickbait",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        },
+        {
+          "clue_id": "184300",
+          "category": "REFERENCE BOOKS",
+          "clue_text": "As the credits indicate, many \"Jeopardy!\" clues are verified using this ency. from Macmillan",
+          "correct_response": "Collier's",
+          "buzz_delta_ms": 67.39520002156496,
+          "early_buzz": false,
+          "correct": true
+        }
+      ]
     }
   ]
 }
