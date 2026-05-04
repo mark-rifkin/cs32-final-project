@@ -1,14 +1,60 @@
 # CS 32 Final Project: Podium: a Jeopardy training app
+<img src="assets/full_logo.png" width="400">
 
 # FP Submission
 ## About 
 
 ## Setup
+- Clone this repository
+- Ensure miniconda or anaconda is installed 
+- To install dependencies, run:
+```
+conda env create -f environment.yml
+```
 
+- To launch the app, run: 
+```
+conda activate podium 
+python run.py
+```
 ## How to play
+Once the app loads, you can press start to get your first question. 
+
+The app reads the question (or, as Jeopardy calls it, "Answer") aloud, and once it has finished reading, lights on the side of the clue indicate that you can buzz in. If you buzz too early, you are locked out for 250ms before you can buzz again. If you do not buzz within 5 seconds of buzzer unlock, the answer is revealed and you are marked incorrect. 
+
+When you successfully buzz in, you have 5 seconds to answer (indicated by lights on the bottom of the screen). Answer aloud and press the answer button before time expires. 
+
+Once you answer, the correct answer (or, as Jeopardy calls it, "Question") is revealed. Mark yourself right or wrong to move on to the next clue. You must answer in the form of a question (e.g. "What is...?")
+
+Quit at any time by closing the window or pressing Quit in the menu. You can also view stats by pressing Stats in the menu. 
+
+
+### Keyboard shortcuts
+- ```Space``` to advance (start game, next question, answer) or buzz
+- ```Enter``` to skip question
+- ```<-``` to mark question incorrect,  ```->``` to mark question correct
+- ```S``` to skip question
+- ```M``` for menu
+
+
+## Next steps:
+*This project accomplished all of its original goals. In the future, I could implement:*
+- Tutorial
+- SFX settings: on/off/volume
+- Filtering: filter questions by year, category, round, etc.(this would rely on repeated API calls and may be difficult depending on the specificity of the filter)
+- Improved stats breakdowns, e.g. by category type
+- Full game mode: (though this would be very difficult with the current random question API, and it's unclear that a better API exists)
+- Local or online multiplayer
+- Nicer graphic design (e.g. more skeuomorphic buttons w/ drop shadow)
 
 ## AI acknowledgment
-
+ChatGPT used extensively with detailed requests for coding help/implementation, primarily: 
+- Suggested some of the project architecture (ie models classes, services)
+- Implemented upgrade from pyttsx3 to pygame in TTSservice
+- Implemented data cleaning in get_random_question in QuestionService
+- Implemented stats_store class
+- Implemented GUI and GUI-based round controller (with very extensive guidance, iteration, and manual edits)
+- Implemented SFX (again, with lots of iteration and manual edits)
 
 
 # FP Status 
