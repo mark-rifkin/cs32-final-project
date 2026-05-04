@@ -46,8 +46,8 @@ class CluePanel(QWidget):
         self.card_wrap_layout = QHBoxLayout(self.card_wrap)
         self.card_wrap_layout.setContentsMargins(0, 0, 0, 0)
 
-        self.left_dots = DotColumn()
-        self.right_dots = DotColumn()
+        self.left_dots = DotColumn(side="left")
+        self.right_dots = DotColumn(side="right")
 
         self.card = QFrame()
         self.card_layout = QVBoxLayout(self.card)
@@ -90,12 +90,6 @@ class CluePanel(QWidget):
         self.header_layout.setSpacing(m.gap)
         self.card_wrap_layout.setSpacing(m.gap)
 
-        self.header_left_pad.setFixedWidth(m.side_gutter_w)
-        self.header_right_pad.setFixedWidth(m.side_gutter_w)
-
-        self.category_banner.setFixedHeight(m.banner_h)
-        self._update_category_banner_style()
-
         self.card.setMinimumHeight(m.card_min_h)
         self.card.setStyleSheet(card_qss(m))
         self.card_layout.setContentsMargins(m.card_pad, m.card_pad, m.card_pad, max(18, m.card_pad - 8))
@@ -114,6 +108,10 @@ class CluePanel(QWidget):
 
         self.left_dots.apply_metrics(m)
         self.right_dots.apply_metrics(m)
+        self.header_left_pad.setFixedWidth(self.left_dots.width()) 
+        self.header_right_pad.setFixedWidth(self.right_dots.width())
+        self.category_banner.setFixedHeight(m.banner_h)
+        self._update_category_banner_style()
 
     def resizeEvent(self, event) -> None:
         self._update_category_banner_style()
@@ -176,10 +174,8 @@ class CluePanel(QWidget):
         self.left_dots.set_active(active)
         self.right_dots.set_active(active)
 
-    def set_answer_phase_active(self, active: bool) -> None:
-        """Deprecated compatibility hook; answer lights now live in ActionRail."""
-        return
 
-    def set_answer_light_count(self, count: int) -> None:
-        """Deprecated compatibility hook; answer lights now live in ActionRail."""
-        return
+
+    def debug_card_widget(self) -> QWidget:
+            """Return the visible clue-card widget used for alignment debugging."""
+            return self.card

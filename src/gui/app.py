@@ -21,6 +21,7 @@ def main() -> int:
     app.setWindowIcon(QIcon(str(logo_path)))
 
     window = MainWindow()
+    window.setWindowIcon(QIcon(str(logo_path)))
     window.show()
 
     # Start intro loading / startup preload after the event loop is running.

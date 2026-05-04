@@ -104,8 +104,11 @@ class ActionRail(QWidget):
         self.root.setContentsMargins(0, 0, 0, 0)
         self.center_layout.setSpacing(m.gap)
 
-        self.left_pad.setFixedWidth(m.side_gutter_w)
-        self.right_pad.setFixedWidth(m.side_gutter_w)
+        rail_edge_correction = 9
+        dot_gutter_w = max(m.side_dot_size + 2, m.side_gutter_w // 2)
+
+        self.left_pad.setFixedWidth(dot_gutter_w + rail_edge_correction)
+        self.right_pad.setFixedWidth(dot_gutter_w + rail_edge_correction)
 
         normal_w = m.rail_width
         for button in (
@@ -232,3 +235,7 @@ class ActionRail(QWidget):
         # Do not rebuild the rail here. Rebuilding during the countdown was the
         # source of the broken light sequence.
         self.answer_strip.set_active_count(count)
+
+    def debug_main_area_widget(self) -> QWidget:
+        """Return the visible action area used for alignment debugging."""
+        return self.center

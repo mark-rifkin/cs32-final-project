@@ -253,10 +253,10 @@ class RoundController(QObject):
         ready_round = ReadyRound(question=question, audio_path=Path(audio_path))
         self.ready_rounds.append(ready_round)
 
-        print(
-            f"[DEBUG] ready round queued: {ready_round.audio_path.name} | "
-            f"queue_size={len(self.ready_rounds)}"
-        )
+        # print(
+        #     f"[DEBUG] ready round queued: {ready_round.audio_path.name} | "
+        #     f"queue_size={len(self.ready_rounds)}"
+        # )
 
         if not self.startup_complete and len(self.ready_rounds) >= self.startup_min_ready:
             self.startup_complete = True
@@ -270,10 +270,10 @@ class RoundController(QObject):
         ready_round = self.ready_rounds.popleft()
         self.waiting_for_ready_round = False
 
-        print(
-            f"[DEBUG] consuming ready round: {ready_round.audio_path.name} | "
-            f"queue_size_after_pop={len(self.ready_rounds)}"
-        )
+        # print(
+        #     f"[DEBUG] consuming ready round: {ready_round.audio_path.name} | "
+        #     f"queue_size_after_pop={len(self.ready_rounds)}"
+        # )
 
         self._begin_round(ready_round)
         self._fill_preload_buffer()
@@ -328,8 +328,8 @@ class RoundController(QObject):
         self.question = ready_round.question
         self.audio_path = ready_round.audio_path
 
-        print(f"[DEBUG] consuming ready round: {self.audio_path.name}")
-        print("[DEBUG] starting playback")
+        # print(f"[DEBUG] consuming ready round: {self.audio_path.name}")
+        # print("[DEBUG] starting playback")
 
         self.clue_panel.set_question(self.question)
 

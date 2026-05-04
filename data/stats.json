@@ -2055,6 +2055,357 @@
           "correct": null
         }
       ]
+    },
+    {
+      "id": 82,
+      "started_at": "2026-05-04T00:06:55",
+      "attempts": [
+        {
+          "clue_id": "469546",
+          "category": "SCULPTURE",
+          "clue_text": "A method of casting for bronze sculptures, cire-perdue means \"lost\" this in English",
+          "correct_response": "wax",
+          "buzz_delta_ms": 524.3255998939276,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "181131",
+          "category": "JOURNALISM",
+          "clue_text": "In 1990 the American press celebrates this anniversary of the 1st newspaper in the colonies",
+          "correct_response": "the 300th",
+          "buzz_delta_ms": 205.85649996064603,
+          "early_buzz": false,
+          "correct": false
+        },
+        {
+          "clue_id": "529172",
+          "category": "THE OLD MAN & THE \"C\"",
+          "clue_text": "A grandson does this carrying job & doesn't mind shaving a few strokes off the old man's scorecard",
+          "correct_response": "caddying",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        },
+        {
+          "clue_id": "592284",
+          "category": "COMEDY CENTRAL",
+          "clue_text": "Trying to figure out how he traveled back to 1986, Craig Robinson realizes, \"It must be some kind of\" this, the film's title",
+          "correct_response": "a hot tub time machine",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        },
+        {
+          "clue_id": "633155",
+          "category": "WE'VE GOT TODAY'S HITS",
+          "clue_text": "People were \"lovin on me\"... well, not me, but him when he took that tune to No. 1",
+          "correct_response": "Jack Harlow",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        },
+        {
+          "clue_id": "558294",
+          "category": "MIDDLE \"AGE\"",
+          "clue_text": "Romans 6 says these \"of sin\" are death",
+          "correct_response": "wages",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        },
+        {
+          "clue_id": "496197",
+          "category": "THE RUSSIAN REVOLUTION",
+          "clue_text": "The 1903 Social Democratic Party congress saw a split between the Bolsheviks & this faction led by Martov",
+          "correct_response": "the Mensheviks",
+          "buzz_delta_ms": 63.11909994110465,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "320059",
+          "category": "NUMBER, PLEASE",
+          "clue_text": "States in the United States in 1945",
+          "correct_response": "48",
+          "buzz_delta_ms": 193.7155001796782,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "449688",
+          "category": "THE CURRENT SUPREME COURT JUSTICE WHO",
+          "clue_text": "...is the youngest",
+          "correct_response": "John Roberts",
+          "buzz_delta_ms": 544.2434998694807,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "393945",
+          "category": "DUETS",
+          "clue_text": "1 of 2 Top 40 duets sung by Marvin Gaye & Tammi Terrell with \"Ain't\" in the title",
+          "correct_response": "\\\"Ain't No Mountain High Enough\" or \"Ain't Nothing Like The Real Thing\\\"",
+          "buzz_delta_ms": 163.03379996679723,
+          "early_buzz": false,
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": 83,
+      "started_at": "2026-05-04T00:11:07",
+      "attempts": [
+        {
+          "clue_id": "305703",
+          "category": "SANK-A",
+          "clue_text": "In 1956 this Italian liner sank after a collision with the Swedish liner Stockholm",
+          "correct_response": "Andrea Doria",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        }
+      ]
+    },
+    {
+      "id": 84,
+      "started_at": "2026-05-04T00:13:04",
+      "attempts": [
+        {
+          "clue_id": "616662",
+          "category": "ENDS WITH THE SAME 2 CONSONANTS",
+          "clue_text": "It's a single photograph or a contraption to make booze",
+          "correct_response": "a still",
+          "buzz_delta_ms": 350.8961000479758,
+          "early_buzz": false,
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": 85,
+      "started_at": "2026-05-04T00:13:49",
+      "attempts": [
+        {
+          "clue_id": "139387",
+          "category": "PEACE",
+          "clue_text": "Long before the Vietnam era, Britain's Disraeli & Chamberlain each coupled \"peace\" with this noun",
+          "correct_response": "honor",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        }
+      ]
+    },
+    {
+      "id": 86,
+      "started_at": "2026-05-04T00:16:37",
+      "attempts": []
+    },
+    {
+      "id": 87,
+      "started_at": "2026-05-04T00:18:51",
+      "attempts": []
+    },
+    {
+      "id": 88,
+      "started_at": "2026-05-04T00:20:14",
+      "attempts": [
+        {
+          "clue_id": "354813",
+          "category": "PHYSICAL SCIENCE",
+          "clue_text": "Its formula is H2S & it smells like rotten eggs",
+          "correct_response": "hydrogen sulfide",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        }
+      ]
+    },
+    {
+      "id": 89,
+      "started_at": "2026-05-04T00:20:43",
+      "attempts": []
+    },
+    {
+      "id": 90,
+      "started_at": "2026-05-04T00:22:24",
+      "attempts": []
+    },
+    {
+      "id": 91,
+      "started_at": "2026-05-04T00:23:18",
+      "attempts": [
+        {
+          "clue_id": "188728",
+          "category": "THE 1960s",
+          "clue_text": "In 1962 18-year-old Peter Fechter became the first person to be killed trying to scale this",
+          "correct_response": "the Berlin Wall",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        }
+      ]
+    },
+    {
+      "id": 92,
+      "started_at": "2026-05-04T00:24:49",
+      "attempts": [
+        {
+          "clue_id": "581352",
+          "category": "POSITIVE HISTORY",
+          "clue_text": "In 1620 Spanish priest Juan Pablo Bonet published the first book about this type of communication for the deaf",
+          "correct_response": "sign language",
+          "buzz_delta_ms": 85.4780999943614,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "327262",
+          "category": "WORLD RELIGION",
+          "clue_text": "The world's largest religious structure, Angkor Wat in Cambodia, was built to honor this preserver deity",
+          "correct_response": "Vishnu",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        }
+      ]
+    },
+    {
+      "id": 93,
+      "started_at": "2026-05-04T00:26:30",
+      "attempts": []
+    },
+    {
+      "id": 94,
+      "started_at": "2026-05-04T00:27:43",
+      "attempts": []
+    },
+    {
+      "id": 95,
+      "started_at": "2026-05-04T00:28:23",
+      "attempts": [
+        {
+          "clue_id": "278833",
+          "category": "SCIENCE",
+          "clue_text": "In a month an observer can see 59% of this heavenly body's surface",
+          "correct_response": "Moon",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        }
+      ]
+    },
+    {
+      "id": 96,
+      "started_at": "2026-05-04T00:31:17",
+      "attempts": [
+        {
+          "clue_id": "331614",
+          "category": "GLOBETROTTING",
+          "clue_text": "This sixth-largest country in the world was first sighted by Europeans in the 17th century",
+          "correct_response": "Australia",
+          "buzz_delta_ms": 509.5986998640001,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "552329",
+          "category": "LITERARY HOMES",
+          "clue_text": "This employer of Jane Eyre owns Thornfield Hall",
+          "correct_response": "Rochester",
+          "buzz_delta_ms": 184.26129990257323,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "538411",
+          "category": "SIX FEET UNDER",
+          "clue_text": "These social insects use the \"waggle dance\" to communicate the location of distant food sources",
+          "correct_response": "bees",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        },
+        {
+          "clue_id": "396569",
+          "category": "LET'S GRAB SOME SEAFOOD",
+          "clue_text": "This bivalve mollusk has 2 fan-shaped shells that can be used to serve dishes like coquilles St. Jacques",
+          "correct_response": "scallops",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        },
+        {
+          "clue_id": "310939",
+          "category": "OLD TESTAMENT PEOPLE",
+          "clue_text": "Daniel told this king, \"They shall drive thee from men, and thy dwelling shall be with the beasts of the field\"",
+          "correct_response": "Nebuchadnezzar",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        },
+        {
+          "clue_id": "287874",
+          "category": "LAST NAME'S THE SAME",
+          "clue_text": "Timothy, Lauren, E.F.",
+          "correct_response": "Hutton",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        },
+        {
+          "clue_id": "611345",
+          "category": "BOOKS & AUTHORS",
+          "clue_text": "He did window displays for a toy store before writing & illustrating kids' classics like \"Where the Wild Things Are\"",
+          "correct_response": "Sendak",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        },
+        {
+          "clue_id": "591616",
+          "category": "CAPITAL \"C\"",
+          "clue_text": "A promontory of \"Good Hope\" is near this legislative capital",
+          "correct_response": "Cape Town",
+          "buzz_delta_ms": null,
+          "early_buzz": true,
+          "correct": null
+        },
+        {
+          "clue_id": "186483",
+          "category": "LAW",
+          "clue_text": "It's now the minimum age for buying hard liquor in all 50 states",
+          "correct_response": "21",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        },
+        {
+          "clue_id": "455061",
+          "category": "YOU KNOW THAT SONG",
+          "clue_text": "...this Joan Jett song... it was No. 1 for 7 weeks in '82... told us to \"put another dime in the jukebox, baby\"",
+          "correct_response": "\\\"I Love Rock 'N Roll\\\"",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        }
+      ]
+    },
+    {
+      "id": 97,
+      "started_at": "2026-05-04T00:34:28",
+      "attempts": []
+    },
+    {
+      "id": 98,
+      "started_at": "2026-05-04T00:35:14",
+      "attempts": []
+    },
+    {
+      "id": 99,
+      "started_at": "2026-05-04T00:35:42",
+      "attempts": []
     }
   ]
 }

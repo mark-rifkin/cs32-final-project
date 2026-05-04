@@ -31,7 +31,6 @@ class MainWindow(QMainWindow):
         super().__init__()
         self.setWindowTitle("Podium")
 
-        # The logo is a required packaged asset.
         logo_path = Path(__file__).resolve().parents[2] / "assets" / "ui" / "logo.png"
         self.setWindowIcon(QIcon(str(logo_path)))
         self.resize(1100, 760)
@@ -55,7 +54,6 @@ class MainWindow(QMainWindow):
         self.game_page = QWidget()
         self.game_page.setStyleSheet(f"background:{COLORS['bg']};")
 
-        # Game screen is now vertical: clue area above, horizontal action rail below.
         self.root = QVBoxLayout(self.game_page)
         self.clue_panel = CluePanel()
         self.action_rail = ActionRail()

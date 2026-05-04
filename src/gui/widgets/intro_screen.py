@@ -147,7 +147,7 @@ class IntroScreen(QWidget):
         self.root.addStretch(2)
         self.root.addWidget(self.wordmark_label, alignment=Qt.AlignmentFlag.AlignCenter)
         self.root.addWidget(self.wordmark_fallback, alignment=Qt.AlignmentFlag.AlignCenter)
-        self.root.addSpacing(18)
+        self.root.addSpacing(25)
         self.root.addWidget(self.stage, alignment=Qt.AlignmentFlag.AlignCenter)
         self.root.addStretch(3)
 

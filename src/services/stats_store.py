@@ -7,10 +7,14 @@ from src.models import Attempt
 
 
 class StatsStore:
-    def __init__(self, path: str = "data/stats.json"):
-        '''Initializes (and creates if nonexistent) json stats storage
-        '''
-        self.path = Path(path)
+    def __init__(self, path: str | None = None):
+        """Initializes and creates JSON stats storage if nonexistent."""
+        if path is None:
+            path = Path(__file__).resolve().parents[2] / "data" / "stats.json"
+        else:
+            path = Path(path)
+
+        self.path = path
         self.path.parent.mkdir(parents=True, exist_ok=True)
 
         if not self.path.exists():
