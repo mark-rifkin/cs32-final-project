@@ -41,10 +41,10 @@ class LoadRoundWorker(QObject):
             audio_path = self.tts.prepare(question.clue_text, cache_key)
             t2 = time.perf_counter()
 
-            print(
-                f"[DEBUG] fetch question: {(t1 - t0):.3f}s | "
-                f"prepare audio: {(t2 - t1):.3f}s"
-            )
+            # print(
+            #     f"[DEBUG] fetch question: {(t1 - t0):.3f}s | "
+            #     f"prepare audio: {(t2 - t1):.3f}s"
+            # )
             self.finished.emit(question, str(audio_path))
 
         except Exception as exc:
