@@ -2,52 +2,70 @@ from __future__ import annotations
 
 """Top-level main window.
 
-This class builds the top-level layout for the main window.
+The window owns screen composition:
+- intro screen before the first clue
+- game screen after Start
+
+The round controller owns gameplay state after the intro screen is dismissed.
 """
 
+from pathlib import Path
+
 from PySide6.QtCore import Qt
-from PySide6.QtWidgets import QHBoxLayout, QMainWindow, QMessageBox, QVBoxLayout, QWidget
+from PySide6.QtGui import QIcon
+from PySide6.QtWidgets import QMainWindow, QMessageBox, QStackedWidget, QVBoxLayout, QWidget
 
 from src.gui.round_controller import RoundController
-from src.gui.theme.gui_theme import COLORS, metrics_for
+from src.gui.gui_theme import COLORS, metrics_for
 from src.gui.widgets.action_rail import ActionRail
 from src.gui.widgets.clue_panel import CluePanel
+from src.gui.widgets.intro_screen import IntroScreen
 from src.services.question_service import QuestionService
+from src.services.sfx_service import SFXService
 from src.services.stats_store import StatsStore
 from src.services.tts_service import TTSService
-from src.services.sfx_service import SFXService
 
 
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Podium")
+
+        # The logo is a required packaged asset.
+        logo_path = Path(__file__).resolve().parents[2] / "assets" / "ui" / "logo.png"
+        self.setWindowIcon(QIcon(str(logo_path)))
         self.resize(1100, 760)
         self.setMinimumSize(900, 620)
-        # Make sure the main window, not a child button, owns keyboard focus.
         self.setFocusPolicy(Qt.FocusPolicy.StrongFocus)
 
         self.questions = QuestionService()
         self.tts = TTSService()
         self.sfx = SFXService()
         self.stats = StatsStore()
-        self.stats.start_session()
 
         central = QWidget()
         self.setCentralWidget(central)
+        self.stack = QStackedWidget(central)
+        outer = QVBoxLayout(central)
+        outer.setContentsMargins(0, 0, 0, 0)
+        outer.addWidget(self.stack)
 
-        self.root = QHBoxLayout(central)
-        self.left_col = QVBoxLayout()
-        self.right_col = QVBoxLayout()
+        self.intro_screen = IntroScreen()
 
+        self.game_page = QWidget()
+        self.game_page.setStyleSheet(f"background:{COLORS['bg']};")
+
+        # Game screen is now vertical: clue area above, horizontal action rail below.
+        self.root = QVBoxLayout(self.game_page)
         self.clue_panel = CluePanel()
         self.action_rail = ActionRail()
 
-        self.left_col.addWidget(self.clue_panel, 1)
-        self.right_col.addWidget(self.action_rail)
+        self.root.addWidget(self.clue_panel, 1)
+        self.root.addWidget(self.action_rail)
 
-        self.root.addLayout(self.left_col, 1)
-        self.root.addLayout(self.right_col)
+        self.stack.addWidget(self.intro_screen)
+        self.stack.addWidget(self.game_page)
+        self.stack.setCurrentWidget(self.intro_screen)
         self.statusBar().hide()
 
         self.controller = RoundController(
@@ -60,45 +78,54 @@ class MainWindow(QMainWindow):
             show_error=self.show_error,
         )
 
-        # MainWindow still owns dialogs and application-level actions.
+        self.intro_screen.start_requested.connect(self._enter_game)
+        self.controller.startup_ready.connect(self.intro_screen.set_ready)
+
         self.action_rail.stats_requested.connect(self.show_stats)
-        self.action_rail.settings_requested.connect(self.show_settings)
         self.action_rail.quit_requested.connect(self.close)
 
         self._apply_window_style()
         self._apply_metrics()
 
     def start(self) -> None:
-        """Start the GUI round flow after the event loop is live.
-
-        We also force focus back to the window so Space/S/M shortcuts work
-        consistently on macOS as well as Windows.
-        """
+        """Kick off intro audio + startup preload after the event loop is live."""
         self.activateWindow()
         self.raise_()
         self.setFocus()
+        self.intro_screen.start_loading_animation()
+        self.sfx.play_intro_theme()
         self.controller.start()
+
+    def _enter_game(self) -> None:
+        """Switch from the intro screen into the main gameplay view."""
+        if self.stats.current_session_id is None:
+            self.stats.start_session()
+
+        self.stack.setCurrentWidget(self.game_page)
+        self.setFocus()
+        self.controller.start_first_round()
 
     def _apply_window_style(self) -> None:
         self.setStyleSheet(
             f"""
             QMainWindow {{
-                background:{COLORS['bg']};
-            }}
-            QWidget {{
-                background:{COLORS['bg']};
-                color:{COLORS['text']};
+                background:{COLORS['intro_bg']};
             }}
             """
         )
 
     def _apply_metrics(self) -> None:
         metrics = metrics_for(self.size())
-        self.root.setContentsMargins(metrics.outer_margin, metrics.outer_margin, metrics.outer_margin, metrics.outer_margin)
-        self.root.setSpacing(metrics.gap)
-        self.left_col.setSpacing(metrics.gap)
-        self.right_col.setSpacing(metrics.gap)
 
+        self.root.setContentsMargins(
+            metrics.outer_margin,
+            metrics.outer_margin,
+            metrics.outer_margin,
+            metrics.outer_margin,
+        )
+        self.root.setSpacing(metrics.gap)
+
+        self.intro_screen.apply_metrics(metrics)
         self.clue_panel.apply_metrics(metrics)
         self.action_rail.apply_metrics(metrics)
 
@@ -110,23 +137,25 @@ class MainWindow(QMainWindow):
         text = self.stats.summary_text("current") + "\n\n" + self.stats.summary_text("overall")
         QMessageBox.information(self, "Stats", text)
 
-    def show_settings(self) -> None:
-        QMessageBox.information(self, "Settings", "Settings panel not implemented yet.")
-
     def show_error(self, message: str) -> None:
         QMessageBox.critical(self, "Error", message)
 
     def keyPressEvent(self, event) -> None:
-        """Window-level keyboard shortcuts.
-
-        We ignore auto-repeat so holding a key down does not trigger repeated
-        buzzes, skips, or accidental multiple next actions.
-        """
+        """Window-level keyboard shortcuts."""
         if event.isAutoRepeat():
             event.ignore()
             return
 
         key = event.key()
+        current = self.stack.currentWidget()
+
+        if current is self.intro_screen:
+            if key == Qt.Key.Key_Space and self.intro_screen.is_ready:
+                self._enter_game()
+                event.accept()
+                return
+            super().keyPressEvent(event)
+            return
 
         if key == Qt.Key.Key_Space:
             self.controller.handle_space_shortcut()

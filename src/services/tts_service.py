@@ -1,14 +1,8 @@
 from __future__ import annotations
 
-"""Speech synthesis and low-latency clue playback.
-
-This service intentionally handles both:
-1. generating/caching clue audio with edge-tts
-2. playing cached clue audio with pygame-ce
-
-Reason:
-pygame-ce previously gave much lower startup latency than QtMultimedia in this
-project, while still being cross-platform for Windows and macOS.
+""" Service that handles: 
+1. Generating/caching clue audio with edge-tts
+2. Playing cached clue audio with pygame-ce
 """
 
 import hashlib
@@ -21,15 +15,15 @@ import pygame
 
 
 class TTSService:
-    """Generate and play cached clue audio."""
-
     def __init__(self, voice: str = "en-US-BrianNeural", rate: str = "-1%"):
+        '''
+        '''
         self.voice = voice
         self.rate = rate
         self.cache_dir = Path(tempfile.gettempdir()) / "podium_tts_cache"
         self.cache_dir.mkdir(parents=True, exist_ok=True)
 
-        # pygame-ce audio backend
+        # initialize audio backend
         pygame.mixer.init()
 
     def _cache_path(self, cache_key: str) -> Path:

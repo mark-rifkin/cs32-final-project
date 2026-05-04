@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from PySide6.QtWidgets import QFrame, QHBoxLayout, QVBoxLayout, QWidget
 
-from src.gui.theme.gui_theme import COLORS, Metrics
+from src.gui.gui_theme import COLORS, Metrics
 
 
 class DotColumn(QWidget):

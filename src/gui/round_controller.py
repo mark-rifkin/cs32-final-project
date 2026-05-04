@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-"""Round logic and state machine for the GUI.
+"""Round logic and state machine for the game screen.
 
 This controller owns:
 - the ready-round preload queue
@@ -8,9 +8,9 @@ This controller owns:
 - timers and state transitions
 - clue / buzz / reveal behavior
 
-Design choice:
-Keep the queue-based preload improvements, but use the simpler pygame-backed
-worker playback path because it previously had lower startup latency.
+It intentionally does *not* own the intro screen. The intro screen simply waits
+for the startup buffer to warm up, then asks the controller to begin the first
+round when the user presses Start.
 """
 
 import time
@@ -19,16 +19,16 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Callable
 
-from PySide6.QtCore import QObject, QThread, QTimer, Slot
+from PySide6.QtCore import QObject, QThread, QTimer, Signal, Slot
 
 from src.gui.widgets.action_rail import ActionRail
 from src.gui.widgets.clue_panel import CluePanel
 from src.gui.workers import LoadRoundWorker, PlayAudioWorker
 from src.models import Attempt, Question
 from src.services.question_service import QuestionService
+from src.services.sfx_service import SFXService
 from src.services.stats_store import StatsStore
 from src.services.tts_service import TTSService
-from src.services.sfx_service import SFXService
 
 
 @dataclass
@@ -39,6 +39,10 @@ class ReadyRound:
 
 
 class RoundController(QObject):
+    """Controller for the main game flow after the intro screen."""
+
+    startup_ready = Signal()
+
     EARLY_LOCKOUT_MS = 250
     NO_BUZZ_TIMEOUT_S = 5
     ANSWER_TIME_S = 5
@@ -63,36 +67,29 @@ class RoundController(QObject):
         self.action_rail = action_rail
         self.show_error = show_error
 
-        # Current round data
         self.question: Question | None = None
         self.audio_path: Path | None = None
 
-        # UI / round state
         self.state = "IDLE"  # IDLE LOADING READING UNLOCKED ANSWERING REVEAL
         self.menu_open = False
         self.reveal_mode = "grade"  # "grade" or "next"
 
-        # Timing / attempt state
         self.early_buzzed = False
         self.unlock_time: float | None = None
         self.current_buzz_delta_ms: float | None = None
         self.locked_until = 0.0
         self.phase_deadline: float | None = None
 
-        # Preload queue
+        # Startup / round preload queue.
         self.ready_rounds: deque[ReadyRound] = deque()
         self.target_ready_buffer = 3
-        self.preload_thread: QThread | None = None
-        self.waiting_for_ready_round = False
-        # On app startup, do not begin the first round until at least this many
-        # clues are already fully prepared.
         self.startup_min_ready = 2
         self.startup_complete = False
+        self.preload_thread: QThread | None = None
+        self.waiting_for_ready_round = False
 
-        # Playback thread
         self.play_thread: QThread | None = None
 
-        # Timers
         self.phase_timer = QTimer(self)
         self.phase_timer.setSingleShot(True)
         self.phase_timer.timeout.connect(self._on_phase_timeout)
@@ -113,7 +110,7 @@ class RoundController(QObject):
         self.lockout_timer.setSingleShot(True)
         self.lockout_timer.timeout.connect(self._clear_buzz_lockout)
 
-        # UI event wiring
+        # UI event wiring.
         self.action_rail.menu_requested.connect(self.toggle_menu)
         self.action_rail.skip_requested.connect(self.skip_clue)
         self.action_rail.primary_requested.connect(self.handle_primary_action)
@@ -124,13 +121,27 @@ class RoundController(QObject):
         self._reset_round_display()
 
     def start(self) -> None:
-        """Warm the queue before starting the first clue.
-        Avoids start with empty buffer"""
-        self.state = "LOADING"
-        self.waiting_for_ready_round = True
-        self.clue_panel.set_loading()
-        self._refresh_action_mode()
+        """Begin background preloading for the intro screen.
+
+        The intro screen animation runs independently. When we have warmed the
+        preload queue enough, this controller emits ``startup_ready``.
+        """
         self._fill_preload_buffer()
+
+    def start_first_round(self) -> None:
+        """Begin gameplay after the intro screen's Start button is pressed."""
+        if self.state in {"READING", "UNLOCKED", "ANSWERING"}:
+            return
+
+        self._stop_phase()
+        self._reset_round_display()
+
+        if self.ready_rounds:
+            self._consume_ready_round()
+        else:
+            # Fallback safety path: if Start is somehow pressed early, show the
+            # normal loading state and wait for the next prepared clue.
+            self.load_next_round()
 
     # ------------------------------------------------------------------
     # Action rail mode control
@@ -163,13 +174,8 @@ class RoundController(QObject):
     # ------------------------------------------------------------------
     # Keyboard shortcut handlers
     # ------------------------------------------------------------------
+
     def handle_space_shortcut(self) -> None:
-        """Spacebar should trigger the main action for the current screen.
-        Mapping:
-        - READING / UNLOCKED -> Buzz
-        - ANSWERING -> Answer
-        - REVEAL with reveal_mode == "next" -> Next
-        """
         if self.menu_open:
             return
 
@@ -181,7 +187,6 @@ class RoundController(QObject):
             self.load_next_round()
 
     def handle_skip_shortcut(self) -> None:
-        """Enter should skip only while a clue is active."""
         if self.menu_open:
             return
 
@@ -189,7 +194,6 @@ class RoundController(QObject):
             self.skip_clue()
 
     def handle_wrong_shortcut(self) -> None:
-        """Left arrow marks the revealed response as wrong."""
         if self.menu_open:
             return
 
@@ -197,26 +201,21 @@ class RoundController(QObject):
             self.grade_attempt(False)
 
     def handle_right_shortcut(self) -> None:
-        """Right arrow marks the revealed response as right."""
         if self.menu_open:
             return
 
         if self.state == "REVEAL" and self.reveal_mode == "grade":
             self.grade_attempt(True)
-    
 
     # ------------------------------------------------------------------
     # Preload queue
     # ------------------------------------------------------------------
 
     def _clear_preload_thread(self) -> None:
-        """Mark the preload thread as finished, then continue filling the queue.
-        """
         self.preload_thread = None
         self._fill_preload_buffer()
 
     def _fill_preload_buffer(self) -> None:
-        """Keep the queue of prepared rounds topped up."""
         if self.preload_thread is not None:
             return
 
@@ -226,7 +225,6 @@ class RoundController(QObject):
         self._start_preload_worker()
 
     def _start_preload_worker(self) -> None:
-        """Start one worker that fetches a question and prepares its audio."""
         self.preload_thread = QThread(self)
         self.preload_worker = LoadRoundWorker(self.questions, self.tts)
         self.preload_worker.moveToThread(self.preload_thread)
@@ -248,13 +246,11 @@ class RoundController(QObject):
     def _on_preload_ready(self, question: Question, audio_path: str) -> None:
         """Store a fully prepared round in the queue.
 
-        During startup, wait until we have a small buffer before consuming the
-        first round. After startup, consume immediately whenever the UI is waiting.
+        During intro warm-up, just build the queue and emit startup_ready once
+        enough clues are buffered. During gameplay loading, consume as soon as
+        the UI is waiting for a clue.
         """
-        ready_round = ReadyRound(
-            question=question,
-            audio_path=Path(audio_path),
-        )
+        ready_round = ReadyRound(question=question, audio_path=Path(audio_path))
         self.ready_rounds.append(ready_round)
 
         print(
@@ -262,20 +258,14 @@ class RoundController(QObject):
             f"queue_size={len(self.ready_rounds)}"
         )
 
-        if not self.startup_complete:
-            # Only begin gameplay after the queue has a little slack.
-            if len(self.ready_rounds) >= self.startup_min_ready:
-                self.startup_complete = True
-                if self.state == "LOADING" and self.waiting_for_ready_round:
-                    self._consume_ready_round()
-        else:
-            if self.state == "LOADING" and self.waiting_for_ready_round:
-                self._consume_ready_round()
+        if not self.startup_complete and len(self.ready_rounds) >= self.startup_min_ready:
+            self.startup_complete = True
+            self.startup_ready.emit()
 
-        self._fill_preload_buffer()
+        if self.state == "LOADING" and self.waiting_for_ready_round:
+            self._consume_ready_round()
 
     def _consume_ready_round(self) -> None:
-        """Take the next prepared round from the queue and begin it."""
         assert self.ready_rounds
         ready_round = self.ready_rounds.popleft()
         self.waiting_for_ready_round = False
@@ -301,8 +291,8 @@ class RoundController(QObject):
         self.locked_until = 0.0
 
         self.clue_panel.set_unlock_lights(False)
-        self.clue_panel.set_answer_phase_active(False)
-        self.clue_panel.set_answer_light_count(0)
+        self.action_rail.set_answer_phase_active(False)
+        self.action_rail.set_answer_light_count(0)
 
         self.action_rail.set_skip_enabled(False)
         self.action_rail.set_primary_enabled(False)
@@ -315,7 +305,6 @@ class RoundController(QObject):
         self._refresh_action_mode()
 
     def load_next_round(self) -> None:
-        """Move to the next clue, using the preload queue if possible."""
         if self.state in {"LOADING", "READING", "UNLOCKED", "ANSWERING"}:
             return
 
@@ -372,7 +361,6 @@ class RoundController(QObject):
 
     @Slot()
     def _on_audio_finished(self) -> None:
-        """Unlock buzzing once clue audio finishes."""
         if self.state != "READING":
             return
 
@@ -406,13 +394,13 @@ class RoundController(QObject):
         self.phase_timer.stop()
         self.countdown_timer.stop()
         self.phase_deadline = None
-        self.clue_panel.set_answer_phase_active(False)
+        self.action_rail.set_answer_phase_active(False)
 
     def _start_answer_phase(self) -> None:
         self.state = "ANSWERING"
         self.clue_panel.set_unlock_lights(False)
-        self.clue_panel.set_answer_phase_active(True)
-        self.clue_panel.set_answer_light_count(7)
+        self.action_rail.set_answer_phase_active(True)
+        self.action_rail.set_answer_light_count(7)
 
         self.phase_deadline = time.perf_counter() + self.ANSWER_TIME_S
         self.phase_timer.start(self.ANSWER_TIME_S * 1000)
@@ -437,12 +425,11 @@ class RoundController(QObject):
         else:
             count = 0
 
-        self.clue_panel.set_answer_light_count(count)
+        self.action_rail.set_answer_light_count(count)
 
     def _on_phase_timeout(self) -> None:
-        self.sfx.play_negative_triplet()
-
         if self.state == "UNLOCKED":
+            self.sfx.play_negative_triplet()
             self._finish_without_buzz()
         elif self.state == "ANSWERING":
             self._reveal_for_grading()
@@ -499,6 +486,7 @@ class RoundController(QObject):
 
         assert self.question is not None
         self.clue_panel.show_reveal(self.question.correct_response)
+        self.sfx.play_reveal()
         self.action_rail.set_reveal_buttons_enabled(True)
         self._refresh_action_mode()
 
@@ -508,7 +496,6 @@ class RoundController(QObject):
 
         self.tts.stop_playback()
         self.sfx.play_negative_triplet()
-
         self._finish_without_buzz()
 
     def _finish_without_buzz(self) -> None:
@@ -552,7 +539,6 @@ class RoundController(QObject):
         )
         self.stats.save_attempt(attempt)
 
-         # Grading feedback sound.
         if correct:
             self.sfx.play_correct()
         else:
@@ -587,7 +573,6 @@ class RoundController(QObject):
     # ------------------------------------------------------------------
 
     def shutdown(self) -> None:
-        """Stop timers and audio cleanly when the window closes."""
         self._stop_phase()
         self.auto_timer.stop()
         self.buzz_flash_timer.stop()

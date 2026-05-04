@@ -1,20 +1,14 @@
 from __future__ import annotations
 
-"""Small sound-effects service for GUI feedback.
-
-This service keeps sound-effect logic out of the controller so the controller
-can stay focused on round state and timing.
-
-Implementation notes:
-- Uses the existing pygame mixer already initialized for clue playback.
-- Plays short effects on a normal mixer channel, while clue narration continues
-  using pygame.mixer.music.
-- Generates simple WAV files once and caches them in a temp directory.
+"""Sound-effects service for GUI feedback.
+Stores WAV files in a permanent project folder:
+    assets/sfx/
+If a file is missing, a default version is generated once.
+Files can be edited manually if needed. 
 """
 
 import math
 import struct
-import tempfile
 import wave
 from pathlib import Path
 
@@ -22,86 +16,118 @@ import pygame
 
 
 class SFXService:
-    """Generate and play simple built-in UI sound effects."""
+    """Generate default WAV assets once, then always load from disk."""
 
     SAMPLE_RATE = 22050
-    VOLUME = 0.28
+    BASE_VOLUME = 0.28
 
-    def __init__(self):
-        self.cache_dir = Path(tempfile.gettempdir()) / "podium_sfx_cache"
-        self.cache_dir.mkdir(parents=True, exist_ok=True)
+    ASSET_DIR = Path(__file__).resolve().parents[2] / "assets" / "sfx"
 
-        # Be defensive in case this service is ever created before TTSService.
+    # dictionary defining default sound effects
+    DEFAULT_SOUNDS = {
+         "intro_theme": {
+            "filename": "intro_theme.wav",
+            # Jeopardy theme startup, first four notes
+            "pattern":  [
+                (440, 0.5), # A4
+                (587.33, 0.5), # D5
+                (440, 0.5),
+                (293.66, 5), # D4
+            ],
+            "level": 1.00,
+        },
+        "buzz_ok": {
+            "filename": "buzz_ok.wav",
+            "pattern": [
+                (880.0, 0.05), # A5
+                (None, 0.02),
+                (1174.66, 0.10), # D6
+            ],
+            "level": 1.00,
+        },
+        "negative_triplet": {
+            "filename": "negative_triplet.wav",
+            "pattern": [
+                (220.0, 0.09), # A3
+                (None, 0.04),
+                (220.0, 0.09),
+                (None, 0.04),
+                (220.0, 0.09),
+            ],
+            "level": 1.40,
+        },
+        "reveal": {
+            "filename": "reveal.wav",
+            "pattern": [
+                (329.63, 0.08),   # E4
+                (392.00, 0.08),   # G4
+                (523.25, 0.12),   # C5
+            ] ,
+            "level": 0.95,
+        },
+        "correct": {
+            "filename": "correct.wav",
+            "pattern": [
+                (1046.50, 0.1), # C6
+
+            ],
+            "level": 1.00,
+        },
+        "incorrect": {
+            "filename": "incorrect.wav",
+            "pattern": [
+                (220.0, 0.3), # A3
+            ],
+            "level": 1.40,
+        },
+    }
+
+    def __init__(self, asset_dir: Path | None = None):
+        self.asset_dir = asset_dir or self.ASSET_DIR
+        self.asset_dir.mkdir(parents=True, exist_ok=True)
+
+        # In case service is created before TTS
         if not pygame.mixer.get_init():
             pygame.mixer.init()
 
-        # Reserve enough channels for effects.
         pygame.mixer.set_num_channels(8)
-
-        # Use one dedicated channel for UI sound effects.
         self.channel = pygame.mixer.Channel(0)
 
-        # Preload all effects once.
-        self.sounds = {
-            "buzz_ok": self._load_or_create(
-                "buzz_ok.wav",
-                [
-                    (880.0, 0.05),
-                    (None, 0.02),
-                    (1175.0, 0.10),
-                ],
-            ),
-            "negative_triplet": self._load_or_create(
-                "negative_triplet.wav",
-                [
-                    (220.0, 0.09),
-                    (None, 0.04),
-                    (220.0, 0.09),
-                    (None, 0.04),
-                    (220.0, 0.09),
-                ],
-            ),
-            "correct": self._load_or_create(
-                "correct.wav",
-                [
-                    (784.0, 0.06),
-                    (None, 0.02),
-                    (1047.0, 0.14),
-                ],
-            ),
-            "incorrect": self._load_or_create(
-                "incorrect.wav",
-                [
-                    (196.0, 0.30),
-                ],
-            ),
-        }
+        self._ensure_default_assets()
+        self.sounds = self._load_sounds()
 
-    def _load_or_create(
-        self,
-        filename: str,
-        pattern: list[tuple[float | None, float]],
-    ) -> pygame.mixer.Sound:
-        """Load a cached WAV sound, creating it if needed."""
-        path = self.cache_dir / filename
-        if not path.exists():
-            self._write_pattern_wav(path, pattern)
-        return pygame.mixer.Sound(str(path))
+        # print(f"[DEBUG] SFX assets loaded from: {self.asset_dir}")
+
+    def _ensure_default_assets(self) -> None:
+        """Create WAVs if they do not already exist."""
+        for spec in self.DEFAULT_SOUNDS.values():
+            path = self.asset_dir / spec["filename"]
+            if not path.exists():
+                self._write_pattern_wav(
+                    path=path,
+                    pattern=spec["pattern"],
+                    level=spec["level"],
+                )
+                # print(f"[DEBUG] Created default SFX: {path.name}")
+
+    def _load_sounds(self) -> dict[str, pygame.mixer.Sound]:
+        """Load all sound effects from the permanent asset folder."""
+        loaded: dict[str, pygame.mixer.Sound] = {}
+        for name, spec in self.DEFAULT_SOUNDS.items():
+            path = self.asset_dir / spec["filename"]
+            loaded[name] = pygame.mixer.Sound(str(path))
+        return loaded
 
     def _write_pattern_wav(
         self,
         path: Path,
         pattern: list[tuple[float | None, float]],
+        level: float = 1.0,
     ) -> None:
-        """Generate a mono 16-bit PCM WAV from a sequence of tones and silences.
-
-        Each pattern item is:
-            (frequency_hz, duration_seconds)
-
-        A frequency of None means silence for that duration.
-        """
+        """Generate a mono 16-bit PCM WAV from tones and silences."""
         frames = bytearray()
-        amplitude = int(32767 * self.VOLUME)
+        amplitude_scale = min(1.0, self.BASE_VOLUME * level)
+        amplitude = int(32767 * amplitude_scale)
 
         for frequency, duration_s in pattern:
             sample_count = int(self.SAMPLE_RATE * duration_s)
@@ -120,35 +146,52 @@ class SFXService:
 
         with wave.open(str(path), "wb") as wav_file:
             wav_file.setnchannels(1)
-            wav_file.setsampwidth(2)  # 16-bit PCM
+            wav_file.setsampwidth(2)
             wav_file.setframerate(self.SAMPLE_RATE)
             wav_file.writeframes(frames)
 
     def _play(self, sound_name: str) -> None:
-        """Play one sound effect immediately.
-
-        We stop any previous effect on the SFX channel so feedback is crisp and
-        does not become muddy if several events happen close together.
-        """
         self.channel.stop()
         self.channel.play(self.sounds[sound_name])
 
+    
+    def play_intro_theme(self) -> None:
+        self._play("intro_theme")
+
+
     def play_buzz_success(self) -> None:
-        """Short affirmative chime when the buzz is accepted."""
         self._play("buzz_ok")
 
     def play_negative_triplet(self) -> None:
-        """Three low tones for skip / timeout events."""
         self._play("negative_triplet")
 
+    def play_reveal(self) -> None:
+        self._play("reveal")
+
     def play_correct(self) -> None:
-        """Positive chime when the user marks an answer correct."""
         self._play("correct")
 
     def play_incorrect(self) -> None:
-        """Single low tone when the user marks an answer incorrect."""
         self._play("incorrect")
 
     def close(self) -> None:
-        """Nothing to clean up right now, but keep a symmetric API."""
         return
+    
+    def reset_assets(self) -> None:
+        """Delete and recreate all default SFX WAV files, for testing
+        """
+        # Stop any currently playing effect before touching files.
+        self.channel.stop()
+
+        # Delete the known default asset files.
+        for spec in self.DEFAULT_SOUNDS.values():
+            path = self.asset_dir / spec["filename"]
+            if path.exists():
+                path.unlink()
+                print(f"[DEBUG] Deleted SFX: {path.name}")
+
+        # Recreate defaults and load
+        self._ensure_default_assets()
+        self.sounds = self._load_sounds()
+        
+    

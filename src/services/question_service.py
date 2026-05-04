@@ -1,3 +1,6 @@
+'''Retrieves question from online API and converts into 
+Question class format
+'''
 import requests
 from datetime import datetime
 import re
@@ -13,6 +16,7 @@ class QuestionService:
         return text.replace('\\"', '"')
 
     def get_random_question(self) -> Question:
+        # Retrieve dictionary from API 
         response = requests.get(self.URL, timeout=10)
         response.raise_for_status()
         data = response.json()
@@ -28,6 +32,7 @@ class QuestionService:
             except ValueError: # if not in valid date format
                 pass 
 
+        # clean question value
         value_str = data.get("value")
         value = None
         if value_str: # remove $ and convert to int

@@ -1546,6 +1546,515 @@
           "correct": true
         }
       ]
+    },
+    {
+      "id": 54,
+      "started_at": "2026-05-03T19:32:01",
+      "attempts": [
+        {
+          "clue_id": "517626",
+          "category": "ROMANS",
+          "clue_text": "This man died just two years after his one-time friend Julius Caesar",
+          "correct_response": "Brutus",
+          "buzz_delta_ms": 386.73279993236065,
+          "early_buzz": false,
+          "correct": false
+        },
+        {
+          "clue_id": "379947",
+          "category": "A DAY'S CALORIES IN ONE MEAL",
+          "clue_text": "Double Whopper with cheese, King fries, large vanilla shake, Dutch apple pie",
+          "correct_response": "Burger King",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        },
+        {
+          "clue_id": "182776",
+          "category": "EARLY AMERICA",
+          "clue_text": "It's \"Common Sense\" that he was the 1st to write an article regarding women's rights in America, in 1775",
+          "correct_response": "Thomas Paine",
+          "buzz_delta_ms": 117.36469995230436,
+          "early_buzz": false,
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": 55,
+      "started_at": "2026-05-03T19:34:46",
+      "attempts": []
+    },
+    {
+      "id": 56,
+      "started_at": "2026-05-03T19:35:53",
+      "attempts": [
+        {
+          "clue_id": "643964",
+          "category": "AUTHORS",
+          "clue_text": "Andrew Neiderman has written 60+ books under the name of this \"Flowers in the Attic\" author plus her bio, \"The Woman Beyond the Attic\"",
+          "correct_response": "V.C. Andrews",
+          "buzz_delta_ms": 640.1750000659376,
+          "early_buzz": false,
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": 57,
+      "started_at": "2026-05-03T19:37:48",
+      "attempts": [
+        {
+          "clue_id": "334614",
+          "category": "5-LETTER WORDS",
+          "clue_text": "The harsh aftertaste of this soft drink helped make it a synonym for feistiness or spunk",
+          "correct_response": "Moxie",
+          "buzz_delta_ms": 391.30909997038543,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "512908",
+          "category": "\"SO\" IT GOES",
+          "clue_text": "This 2-word term for an entertainment serial first appeared in Newsweek in 1939",
+          "correct_response": "soap opera",
+          "buzz_delta_ms": 3458.614599891007,
+          "early_buzz": false,
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": 58,
+      "started_at": "2026-05-03T19:44:29",
+      "attempts": []
+    },
+    {
+      "id": 59,
+      "started_at": "2026-05-03T19:48:39",
+      "attempts": [
+        {
+          "clue_id": "401542",
+          "category": "STRUCTURES",
+          "clue_text": "Once essential in hot, dry forest weather, this type of structure is less necessary in an age of aircraft & cell phones",
+          "correct_response": "a fire tower",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        }
+      ]
+    },
+    {
+      "id": 60,
+      "started_at": "2026-05-03T19:59:45",
+      "attempts": [
+        {
+          "clue_id": "629991",
+          "category": "POPE FICTION",
+          "clue_text": "Vicarius Christi in Latin, this title is also the title of a novel about a Medal of Honor winner turned Chief Justice turned pope",
+          "correct_response": "Vicar of Christ",
+          "buzz_delta_ms": 411.00429999642074,
+          "early_buzz": false,
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": 61,
+      "started_at": "2026-05-03T20:29:16",
+      "attempts": [
+        {
+          "clue_id": "348054",
+          "category": "COUNTIES",
+          "clue_text": "Georgia's Seminole County borders Alabama & this state's panhandle",
+          "correct_response": "Florida",
+          "buzz_delta_ms": 682.7070000581443,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "233425",
+          "category": "WORLD GEOGRAPHY",
+          "clue_text": "Serpent's Mouth is the passage between Trinidad & this South American country",
+          "correct_response": "Venezuela",
+          "buzz_delta_ms": 329.5786001253873,
+          "early_buzz": false,
+          "correct": false
+        },
+        {
+          "clue_id": "616527",
+          "category": "MONTHS THAT START WITH FEB",
+          "clue_text": "February 1990: In South Africa, the 30-year ban on this political party is lifted by president F.W. de Klerk",
+          "correct_response": "the ANC",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        }
+      ]
+    },
+    {
+      "id": 62,
+      "started_at": "2026-05-03T20:35:21",
+      "attempts": [
+        {
+          "clue_id": "617778",
+          "category": "\"Y\" ON THE MAP",
+          "clue_text": "Today it's the only country on the map whose name in English begins with Y",
+          "correct_response": "Yemen",
+          "buzz_delta_ms": 474.94040010496974,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "572067",
+          "category": "SHAKESPEAREAN DOUBLE BLANK VERSE",
+          "clue_text": "A double double blank, from \"Macbeth\": \"____ is ____, and ____ is ____\"",
+          "correct_response": "\\\"Fair is foul, and foul is fair\\\"",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        }
+      ]
+    },
+    {
+      "id": 63,
+      "started_at": "2026-05-03T21:38:39",
+      "attempts": [
+        {
+          "clue_id": "397356",
+          "category": "ALL ABOUT THE BOOK",
+          "clue_text": "Any randomly chosen book is likely to include this institution's cataloging-in-publication data",
+          "correct_response": "the Library of Congress",
+          "buzz_delta_ms": 522.8830000851303,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "262717",
+          "category": "THE OCCULT",
+          "clue_text": "This religion gave us the legend of the golem, an artificial man made out of clay",
+          "correct_response": "Judaism",
+          "buzz_delta_ms": 348.6005999147892,
+          "early_buzz": false,
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": 64,
+      "started_at": "2026-05-03T21:42:19",
+      "attempts": []
+    },
+    {
+      "id": 65,
+      "started_at": "2026-05-03T21:44:55",
+      "attempts": []
+    },
+    {
+      "id": 66,
+      "started_at": "2026-05-03T22:00:42",
+      "attempts": []
+    },
+    {
+      "id": 67,
+      "started_at": "2026-05-03T22:24:15",
+      "attempts": []
+    },
+    {
+      "id": 68,
+      "started_at": "2026-05-03T22:34:06",
+      "attempts": [
+        {
+          "clue_id": "333089",
+          "category": "THE UNITED NATIONS",
+          "clue_text": "In 1971 this future secretary-general was a candidate for the presidency of Austria",
+          "correct_response": "Kurt Waldheim",
+          "buzz_delta_ms": 276.1831998359412,
+          "early_buzz": false,
+          "correct": false
+        },
+        {
+          "clue_id": "229781",
+          "category": "EDIBLE WORDS & PHRASES",
+          "clue_text": "No matter how you slice it, something incredibly easy is called \"a piece of\" this",
+          "correct_response": "cake",
+          "buzz_delta_ms": 146.22579980641603,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "422195",
+          "category": "19th CENTURY LIT",
+          "clue_text": "His \"Ode to the West Wind\" was \"chiefly written in a wood that skirts the Arno, near Florence\"",
+          "correct_response": "Shelley",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        },
+        {
+          "clue_id": "252141",
+          "category": "POTPOURRI",
+          "clue_text": "This plump little quail is named for its characteristic call",
+          "correct_response": "a bobwhite",
+          "buzz_delta_ms": 755.7608000934124,
+          "early_buzz": false,
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": 69,
+      "started_at": "2026-05-03T22:39:43",
+      "attempts": [
+        {
+          "clue_id": "600738",
+          "category": "THE 15th CENTURY",
+          "clue_text": "After this flagship ran aground in 1492, Christopher Columbus ordered that its wreckage be used to build a fort on Hispaniola",
+          "correct_response": "Santa Maria",
+          "buzz_delta_ms": 121.51480000466108,
+          "early_buzz": false,
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": 70,
+      "started_at": "2026-05-03T22:42:09",
+      "attempts": []
+    },
+    {
+      "id": 71,
+      "started_at": "2026-05-03T22:42:37",
+      "attempts": [
+        {
+          "clue_id": "130453",
+          "category": "FOOD & DRINK",
+          "clue_text": "Tripe is this part of a cow or sheep",
+          "correct_response": "stomach",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        },
+        {
+          "clue_id": "144042",
+          "category": "COMPOSERS",
+          "clue_text": "He wrote suites for Niagara Falls & the Hudson River as well as the Grand Canyon",
+          "correct_response": "Ferde Grof\u00e9",
+          "buzz_delta_ms": 23.16240011714399,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "551875",
+          "category": "AMERICAN BOOKS & AUTHORS",
+          "clue_text": "He used the pen name William Lee when \"Junkie\" was published in 1953",
+          "correct_response": "William S. Burroughs",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        }
+      ]
+    },
+    {
+      "id": 72,
+      "started_at": "2026-05-03T22:51:11",
+      "attempts": [
+        {
+          "clue_id": "388139",
+          "category": "OLD LACE",
+          "clue_text": "In Elizabethan times, lace was a popular material for this stiff, frilly collar",
+          "correct_response": "a ruff",
+          "buzz_delta_ms": 3930.70390005596,
+          "early_buzz": false,
+          "correct": false
+        },
+        {
+          "clue_id": "397708",
+          "category": "CROSSWORD CLUES \"F\"",
+          "clue_text": "Slang for a policeman who walks the beat (8)",
+          "correct_response": "flatfoot",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        },
+        {
+          "clue_id": "256941",
+          "category": "U.S. PRESIDENTS",
+          "clue_text": "The 1857 Dred Scott decision, 2 days into his term, complicated his efforts to unify the country",
+          "correct_response": "James Buchanan",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        }
+      ]
+    },
+    {
+      "id": 73,
+      "started_at": "2026-05-03T22:56:07",
+      "attempts": []
+    },
+    {
+      "id": 74,
+      "started_at": "2026-05-03T22:57:16",
+      "attempts": []
+    },
+    {
+      "id": 75,
+      "started_at": "2026-05-03T23:22:56",
+      "attempts": [
+        {
+          "clue_id": "555633",
+          "category": "U.S. GEOGRAPHY",
+          "clue_text": "This presidential retreat is located in a wooded area of Catoctin Mountain Park in Maryland",
+          "correct_response": "Camp David",
+          "buzz_delta_ms": 4404.189000139013,
+          "early_buzz": false,
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": 76,
+      "started_at": "2026-05-03T23:28:31",
+      "attempts": []
+    },
+    {
+      "id": 77,
+      "started_at": "2026-05-03T23:30:07",
+      "attempts": [
+        {
+          "clue_id": "203687",
+          "category": "ISLANDS",
+          "clue_text": "The Court of Tynwald is the chief legislative body of this island in the Irish Sea",
+          "correct_response": "Isle of Man",
+          "buzz_delta_ms": 492.4541001673788,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "355914",
+          "category": "METAPHORS",
+          "clue_text": "To display one's competence is to \"earn\" these, like a pilot",
+          "correct_response": "your wings",
+          "buzz_delta_ms": 563.8421999756247,
+          "early_buzz": false,
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": 78,
+      "started_at": "2026-05-03T23:47:16",
+      "attempts": [
+        {
+          "clue_id": "315598",
+          "category": "HORNS",
+          "clue_text": "South America's southernmost point, its rocky terrain rises to a height of 1,391 feet",
+          "correct_response": "Cape Horn",
+          "buzz_delta_ms": 1877.1643999498338,
+          "early_buzz": false,
+          "correct": false
+        },
+        {
+          "clue_id": "266328",
+          "category": "NOTORIOUS",
+          "clue_text": "He was an employee of the Texas School Book Depository when he shot JFK from its 6th floor",
+          "correct_response": "Oswald",
+          "buzz_delta_ms": 203.78670003265142,
+          "early_buzz": false,
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": 79,
+      "started_at": "2026-05-03T23:48:44",
+      "attempts": [
+        {
+          "clue_id": "605500",
+          "category": "PULITZER-WINNING CHARACTERS",
+          "clue_text": "Aaronow & Moss, real estate salesmen (1984)",
+          "correct_response": "Glengarry Glen Ross",
+          "buzz_delta_ms": 1012.4721999745816,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "237112",
+          "category": "FOOD & DRINK",
+          "clue_text": "Buttercup & butternut are 2 popular types of this vegetable",
+          "correct_response": "squash",
+          "buzz_delta_ms": 403.9918000344187,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "534134",
+          "category": "FOX(X) NEWS",
+          "clue_text": "In the '70s this comedian played the Sanford part of \"Sanford and Son\"",
+          "correct_response": "Redd Foxx",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        },
+        {
+          "clue_id": "240694",
+          "category": "PHILOSOPHY",
+          "clue_text": "This Greek wrote his dialogues to help men understand the good life & to goad them into living it",
+          "correct_response": "Plato",
+          "buzz_delta_ms": 268.23980011977255,
+          "early_buzz": false,
+          "correct": true
+        },
+        {
+          "clue_id": "645999",
+          "category": "THE WHO?",
+          "clue_text": "Who indeed! He wrote, \"My town is called Who-ville, for I am a who and we Whos are all thankful and grateful to you\"",
+          "correct_response": "Dr. Seuss",
+          "buzz_delta_ms": null,
+          "early_buzz": true,
+          "correct": null
+        },
+        {
+          "clue_id": "187552",
+          "category": "BOB HOPE",
+          "clue_text": "It precedes \"Of sunburns at the shore, nights in Singapore...\"",
+          "correct_response": "\\\"Thanks For The Memory\\\"",
+          "buzz_delta_ms": 3806.3815000932664,
+          "early_buzz": true,
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": 80,
+      "started_at": "2026-05-03T23:51:27",
+      "attempts": [
+        {
+          "clue_id": "454658",
+          "category": "HERBS & SPICES",
+          "clue_text": "This nutmeg spice has an aroma reminiscent of cinnamon & pepper",
+          "correct_response": "mace",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        }
+      ]
+    },
+    {
+      "id": 81,
+      "started_at": "2026-05-03T23:52:07",
+      "attempts": [
+        {
+          "clue_id": "274224",
+          "category": "GOVERNMENT & POLITICS",
+          "clue_text": "This N.Y. congresswoman & wife of Bill Paxon was the keynote speaker at the 1996 Republican Convention",
+          "correct_response": "Susan Molinari",
+          "buzz_delta_ms": null,
+          "early_buzz": false,
+          "correct": null
+        }
+      ]
     }
   ]
 }

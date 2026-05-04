@@ -1,4 +1,16 @@
 # CS 32 Final Project: Podium: a Jeopardy training app
+
+# FP Submission
+## About 
+
+## Setup
+
+## How to play
+
+## AI acknowledgment
+
+
+
 # FP Status 
 ## Description
 Console implementation of a simple Jeopardy training app ("Podium"). Retrieves questions from an online API, reads them aloud using Microsoft Edge's online text-to-speech service, simulates buzzer, and tracks statistics. 
