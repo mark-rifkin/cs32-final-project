@@ -32,7 +32,7 @@ class SFXService:
                 (440, 0.5), # A4
                 (587.33, 0.5), # D5
                 (440, 0.5),
-                (293.66, 5), # D4
+                (293.66, 15), # D4
             ],
             "level": 1.00,
         },
@@ -188,7 +188,7 @@ class SFXService:
             path = self.asset_dir / spec["filename"]
             if path.exists():
                 path.unlink()
-                print(f"[DEBUG] Deleted SFX: {path.name}")
+                # print(f"[DEBUG] Deleted SFX: {path.name}")
 
         # Recreate defaults and load
         self._ensure_default_assets()
