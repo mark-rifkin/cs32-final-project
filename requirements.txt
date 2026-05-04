@@ -1,3 +1,4 @@
 requests
 edge-tts
 pyside6
+pygame-ce
