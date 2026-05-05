@@ -3,7 +3,7 @@
 
 # FP Submission
 ## About 
-
+A Jeopardy! -style trivia game with text-to-speech question reading, buzzer lockout, stats tracking, and a simple GUI. 
 ## Setup
 - Clone this repository
 - Ensure conda is installed. If not, install [miniconda](https://www.anaconda.com/docs/getting-started/miniconda/main) or your distribution of choice. 
@@ -20,6 +20,7 @@ python run.py
 ```
 
 - To uninstall the environment, run: 
+```conda remove podium```
 
 ## How to play
 Once the app loads, you can press start to get your first question. 
@@ -39,7 +40,6 @@ Quit at any time by closing the window or pressing Quit in the menu. You can als
 - ```<-``` to mark question incorrect,  ```->``` to mark question correct
 - ```S``` to skip question
 - ```M``` for menu
-
 
 ## Next steps:
 *This project accomplished all of its original goals. In the future, I could implement:*
