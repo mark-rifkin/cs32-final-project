@@ -6,7 +6,8 @@
 
 ## Setup
 - Clone this repository
-- Ensure miniconda or anaconda is installed 
+- Ensure conda is installed. If not, install [miniconda](https://www.anaconda.com/docs/getting-started/miniconda/main) or your distribution of choice. 
+
 - To install dependencies, run:
 ```
 conda env create -f environment.yml
@@ -17,6 +18,9 @@ conda env create -f environment.yml
 conda activate podium 
 python run.py
 ```
+
+- To uninstall the environment, run: 
+
 ## How to play
 Once the app loads, you can press start to get your first question. 
 

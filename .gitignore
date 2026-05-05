@@ -1,6 +1,5 @@
 # PODIUM - user-specific stats
 data/
-stats.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

@@ -23,7 +23,8 @@ class SFXService:
 
     ASSET_DIR = Path(__file__).resolve().parents[2] / "assets" / "sfx"
 
-    # dictionary defining default sound effects
+    # dictionary defining default sound effects. If modified, need to delete 
+    # from assets/sfx to regenerate
     DEFAULT_SOUNDS = {
          "intro_theme": {
             "filename": "intro_theme.wav",
@@ -32,7 +33,7 @@ class SFXService:
                 (440, 0.5), # A4
                 (587.33, 0.5), # D5
                 (440, 0.5),
-                (293.66, 15), # D4
+                (293.66, 10), # D4
             ],
             "level": 1.00,
         },
@@ -151,9 +152,13 @@ class SFXService:
             wav_file.writeframes(frames)
 
     def _play(self, sound_name: str) -> None:
+        """Stop any currently playing sound effects and play specified effect"""
         self.channel.stop()
         self.channel.play(self.sounds[sound_name])
 
+    def stop(self) -> None:
+        """Stop any currently playing UI sound effect."""
+        self.channel.stop()
     
     def play_intro_theme(self) -> None:
         self._play("intro_theme")

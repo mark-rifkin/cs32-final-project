@@ -1,14 +1,6 @@
 from __future__ import annotations
 
-"""Vertical clue-side light columns used during buzzer unlock.
-
-The dot columns sit outside the clue card.
-
-Important layout idea:
-- The clue card geometry should not change.
-- The dot gutter should be narrower.
-- Dots should align toward the card-facing edge of that gutter.
-- Dot rows should distribute from top to bottom, not cluster in the middle.
+"""Vertical columns displayed outside clue card during buzzer unlock.
 """
 
 from PySide6.QtWidgets import QFrame, QHBoxLayout, QVBoxLayout, QWidget
@@ -28,7 +20,7 @@ class DotColumn(QWidget):
         if side not in {"left", "right"}:
             raise ValueError("side must be 'left' or 'right'")
 
-        self.side = side
+        self.side = side # defines alignment
         self.dots: list[QFrame] = []
         self.active = False
 
@@ -56,12 +48,10 @@ class DotColumn(QWidget):
             self.outer.addStretch(1)
             self.outer.addLayout(row)
 
-        # Final stretch completes the full-height distribution.
         self.outer.addStretch(1)
 
     def apply_metrics(self, m: Metrics) -> None:
-        # Use a narrower visual gutter than the layout's historical side gutter.
-        # This moves the dots closer to the clue card without changing the card.
+        # Narrow gutter slightly
         gutter_w = max(m.side_dot_size + 2, m.side_gutter_w // 2)
         self.setFixedWidth(gutter_w)
 

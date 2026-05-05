@@ -31,17 +31,20 @@ class MainWindow(QMainWindow):
         super().__init__()
         self.setWindowTitle("Podium")
 
+        # Window setup
         logo_path = Path(__file__).resolve().parents[2] / "assets" / "ui" / "logo.png"
         self.setWindowIcon(QIcon(str(logo_path)))
         self.resize(1100, 760)
         self.setMinimumSize(900, 620)
         self.setFocusPolicy(Qt.FocusPolicy.StrongFocus)
 
+        # Service setup
         self.questions = QuestionService()
         self.tts = TTSService()
         self.sfx = SFXService()
         self.stats = StatsStore()
 
+        # Layout setup
         central = QWidget()
         self.setCentralWidget(central)
         self.stack = QStackedWidget(central)
@@ -66,6 +69,7 @@ class MainWindow(QMainWindow):
         self.stack.setCurrentWidget(self.intro_screen)
         self.statusBar().hide()
 
+        # Round controller handles gameplay logic
         self.controller = RoundController(
             questions=self.questions,
             tts=self.tts,
@@ -77,7 +81,7 @@ class MainWindow(QMainWindow):
         )
 
         self.intro_screen.start_requested.connect(self._enter_game)
-        self.controller.startup_ready.connect(self.intro_screen.set_ready)
+        self.controller.startup_ready.connect(self._on_intro_ready)
 
         self.action_rail.stats_requested.connect(self.show_stats)
         self.action_rail.quit_requested.connect(self.close)
@@ -86,13 +90,18 @@ class MainWindow(QMainWindow):
         self._apply_metrics()
 
     def start(self) -> None:
-        """Kick off intro audio + startup preload after the event loop is live."""
+        """Play intro audio/animation, and preload round."""
         self.activateWindow()
         self.raise_()
         self.setFocus()
         self.intro_screen.start_loading_animation()
         self.sfx.play_intro_theme()
         self.controller.start()
+
+    def _on_intro_ready(self) -> None:
+        """Switch intro from loading to Start state and stop the intro cue."""
+        self.sfx.stop()
+        self.intro_screen.set_ready()
 
     def _enter_game(self) -> None:
         """Switch from the intro screen into the main gameplay view."""
@@ -113,6 +122,7 @@ class MainWindow(QMainWindow):
         )
 
     def _apply_metrics(self) -> None:
+        """Resize contents dynamically on window resize"""
         metrics = metrics_for(self.size())
 
         self.root.setContentsMargins(
@@ -132,10 +142,12 @@ class MainWindow(QMainWindow):
         super().resizeEvent(event)
 
     def show_stats(self) -> None:
+        """Stats popup window"""
         text = self.stats.summary_text("current") + "\n\n" + self.stats.summary_text("overall")
         QMessageBox.information(self, "Stats", text)
 
     def show_error(self, message: str) -> None:
+        """Error popup window"""
         QMessageBox.critical(self, "Error", message)
 
     def keyPressEvent(self, event) -> None:
@@ -147,6 +159,7 @@ class MainWindow(QMainWindow):
         key = event.key()
         current = self.stack.currentWidget()
 
+        # Space on intro screen begins
         if current is self.intro_screen:
             if key == Qt.Key.Key_Space and self.intro_screen.is_ready:
                 self._enter_game()
@@ -155,6 +168,7 @@ class MainWindow(QMainWindow):
             super().keyPressEvent(event)
             return
 
+        # Space in game advances (defer to controller)
         if key == Qt.Key.Key_Space:
             self.controller.handle_space_shortcut()
             event.accept()

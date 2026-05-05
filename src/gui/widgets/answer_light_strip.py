@@ -1,10 +1,6 @@
 from __future__ import annotations
 
 """Centered answer countdown lights for the bottom action rail.
-
-The strip paints its own rounded background instead of relying only on a Qt
-stylesheet. That makes the background more reliable when the strip is inserted
-and removed from the bottom rail during mode changes.
 """
 
 from PySide6.QtCore import Qt
@@ -19,7 +15,7 @@ class AnswerLightStrip(QWidget):
         super().__init__(parent)
         self.lights: list[QFrame] = []
         self.current_count = 0
-        self.phase_active = False
+        self.phase_active = False # true if  visible
         self.metrics: Metrics | None = None
 
         self.setAttribute(Qt.WidgetAttribute.WA_StyledBackground, False)
@@ -37,7 +33,7 @@ class AnswerLightStrip(QWidget):
         self.set_phase_active(False)
 
     def apply_metrics(self, m: Metrics) -> None:
-        """Apply button-like sizing and keep the lights centered."""
+        """Sized like a button to fit in action rail"""
         self.metrics = m
         self.setFixedHeight(m.action_h)
         self.setFixedWidth(m.timer_strip_w)
@@ -57,6 +53,7 @@ class AnswerLightStrip(QWidget):
         self.update()
 
     def set_active_count(self, count: int) -> None:
+        # Lights collapse inward
         self.current_count = count
         center_map = {
             7: [0, 1, 2, 3, 4, 5, 6],
@@ -67,6 +64,7 @@ class AnswerLightStrip(QWidget):
         }
         active = set(center_map.get(count, []))
 
+        # Iterate through lights to set correct states
         for i, light in enumerate(self.lights):
             if not self.phase_active:
                 color = "transparent"
@@ -76,7 +74,8 @@ class AnswerLightStrip(QWidget):
                 f"background:{color}; border:none; border-radius:{light.width() // 2}px;"
             )
 
-    def paintEvent(self, event) -> None:  # noqa: D401 - Qt signature
+    def paintEvent(self, event) -> None: 
+        # Only paints background during answer phase
         if not self.phase_active:
             return
 

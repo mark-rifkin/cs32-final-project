@@ -15,7 +15,7 @@ from src.gui.main_window import MainWindow
 
 def main() -> int:
     app = QApplication(sys.argv)
-    app.setFont(QFont("Arial", 11))
+    app.setFont(QFont("Arial", 11)) # font for popups
 
     logo_path = Path(__file__).resolve().parents[2] / "assets" / "ui" / "logo.png"
     app.setWindowIcon(QIcon(str(logo_path)))
@@ -24,7 +24,7 @@ def main() -> int:
     window.setWindowIcon(QIcon(str(logo_path)))
     window.show()
 
-    # Start intro loading / startup preload after the event loop is running.
+    # Start intro loading / startup preload
     QTimer.singleShot(0, window.start)
     return app.exec()
 

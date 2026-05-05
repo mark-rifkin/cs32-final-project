@@ -20,7 +20,7 @@ from src.services.tts_service import TTSService
 
 
 class LoadRoundWorker(QObject):
-    """Fetch a question and prepare its audio off the UI thread."""
+    """Fetch a question and prepare its audio"""
 
     finished = Signal(object, str)
     error = Signal(str)
@@ -33,18 +33,14 @@ class LoadRoundWorker(QObject):
     @Slot()
     def run(self) -> None:
         try:
-            t0 = time.perf_counter()
+            # t0 = time.perf_counter()
             question: Question = self.questions.get_random_question()
-            t1 = time.perf_counter()
+            # t1 = time.perf_counter()
 
             cache_key = question.clue_id or question.clue_text
             audio_path = self.tts.prepare(question.clue_text, cache_key)
-            t2 = time.perf_counter()
+            # t2 = time.perf_counter()
 
-            # print(
-            #     f"[DEBUG] fetch question: {(t1 - t0):.3f}s | "
-            #     f"prepare audio: {(t2 - t1):.3f}s"
-            # )
             self.finished.emit(question, str(audio_path))
 
         except Exception as exc:
@@ -52,7 +48,7 @@ class LoadRoundWorker(QObject):
 
 
 class PlayAudioWorker(QObject):
-    """Play one already-prepared audio file off the UI thread."""
+    """Play one already-prepared audio file"""
 
     finished = Signal()
     error = Signal(str)

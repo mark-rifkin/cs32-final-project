@@ -1,13 +1,6 @@
 from __future__ import annotations
 
 """Intro / splash screen shown before the first clue begins.
-
-This version is intentionally simple:
-- no QGraphicsOpacityEffect
-- no button shadows
-- explicit painted blue background
-- loading tile swaps directly into a Start button of the same size
-- no Tutorial or Settings controls in this version
 """
 
 from pathlib import Path
@@ -47,10 +40,11 @@ class LoadingLogoWidget(QWidget):
         painter = QPainter(self)
         painter.setRenderHint(QPainter.RenderHint.Antialiasing)
 
+        # shrink widget to leave room for rounded corners and shadow
         rect = self.rect().adjusted(8, 8, -8, -8)
+        # add drop shadow box
         shadow_rect = rect.translated(0, 8)
 
-        # Keep the logo shadow only. Button shadows are intentionally removed.
         painter.setPen(Qt.PenStyle.NoPen)
         painter.setBrush(QColor(COLORS["shadow"]))
         painter.drawRoundedRect(shadow_rect, rect.height() * 0.18, rect.height() * 0.18)
@@ -58,6 +52,7 @@ class LoadingLogoWidget(QWidget):
         painter.setBrush(QColor(COLORS["panel"]))
         painter.drawRoundedRect(rect, rect.height() * 0.18, rect.height() * 0.18)
 
+        # compute circle dimensions and center positions
         socket_y = rect.center().y()
         ring_outer = rect.height() * 0.34
         ring_inner = ring_outer * 0.72
@@ -65,9 +60,11 @@ class LoadingLogoWidget(QWidget):
 
         centers: list[tuple[float, float]] = []
         for i in range(3):
+            # space circles evenly within tile
             cx = rect.left() + x_spacing * (i + 0.5)
             centers.append((cx, socket_y))
 
+            # draw "buzzers", buttons with white rings around them
             outer_path = QPainterPath()
             inner_path = QPainterPath()
             outer_path.addEllipse(cx - ring_outer, socket_y - ring_outer, ring_outer * 2, ring_outer * 2)
@@ -77,6 +74,7 @@ class LoadingLogoWidget(QWidget):
             painter.setBrush(QColor("#f4f4f4"))
             painter.drawPath(ring_path)
 
+        # draws active loading button
         active_cx, active_cy = centers[self.active_index]
         disc_r = ring_inner * 0.78
 
@@ -114,7 +112,7 @@ class IntroScreen(QWidget):
         self.wordmark_fallback.setStyleSheet("background: transparent;")
         self.wordmark_fallback.hide()
 
-        # Stage is the exact fixed box used by both loading logo and Start.
+        # Stage is the fixed box used by both loading logo and Start.
         self.stage = QWidget()
         self.stage.setStyleSheet("background: transparent;")
         self.stage_stack = QStackedLayout(self.stage)
@@ -163,7 +161,7 @@ class IntroScreen(QWidget):
             self.wordmark_label.show()
             self.wordmark_fallback.hide()
 
-    def paintEvent(self, event) -> None:  # noqa: D401 - Qt signature
+    def paintEvent(self, event) -> None:  
         painter = QPainter(self)
         painter.fillRect(self.rect(), QColor(COLORS["intro_bg"]))
 

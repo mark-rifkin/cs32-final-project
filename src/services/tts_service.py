@@ -49,9 +49,7 @@ class TTSService:
 
     def play_file(self, audio_path: Path) -> None:
         """Play a prepared audio file synchronously.
-
-        This blocks until playback finishes. In the GUI, it is called from a
-        worker thread, so the UI remains responsive.
+        This blocks until playback finishes (must be called in thread)
         """
         try:
             pygame.mixer.music.load(str(audio_path))

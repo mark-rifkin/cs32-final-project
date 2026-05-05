@@ -1,9 +1,7 @@
 from __future__ import annotations
 
-"""Composite widget for the left side of the game screen.
-
-This owns the category banner, the question/reveal card, the clue-side light
-columns, and the answer-time light strip.
+"""Widget for category banner and question/reveal card.
+Dot columns also stored here but defined in separate class
 """
 
 from PySide6.QtCore import Qt
@@ -23,7 +21,7 @@ class CluePanel(QWidget):
 
         self.root = QVBoxLayout(self)
 
-        # Header wrapper uses transparent side gutters so the visible width of
+        # Header wrapper uses transparent side pads so the visible width of
         # the category banner lines up with the visible width of the clue card.
         self.header_wrap = QWidget()
         self.header_layout = QHBoxLayout(self.header_wrap)
@@ -69,7 +67,6 @@ class CluePanel(QWidget):
 
         for pill in (self.round_pill, self.value_pill, self.date_pill):
             pill.setAlignment(Qt.AlignmentFlag.AlignCenter)
-            # Required for reliable rounded QLabel backgrounds on all platforms.
             pill.setAttribute(Qt.WidgetAttribute.WA_StyledBackground, True)
 
         self.metadata_row.addWidget(self.round_pill)
@@ -78,6 +75,7 @@ class CluePanel(QWidget):
         self.metadata_row.addWidget(self.date_pill)
         self.card_layout.addLayout(self.metadata_row)
 
+        # Dot columns outside clue card
         self.card_wrap_layout.addWidget(self.left_dots)
         self.card_wrap_layout.addWidget(self.card, 1)
         self.card_wrap_layout.addWidget(self.right_dots)
@@ -108,6 +106,7 @@ class CluePanel(QWidget):
 
         self.left_dots.apply_metrics(m)
         self.right_dots.apply_metrics(m)
+        # set pad width based on dot size (so card doesn't resize)
         self.header_left_pad.setFixedWidth(self.left_dots.width()) 
         self.header_right_pad.setFixedWidth(self.right_dots.width())
         self.category_banner.setFixedHeight(m.banner_h)
@@ -134,7 +133,7 @@ class CluePanel(QWidget):
             fm = QFontMetrics(font)
             if fm.horizontalAdvance(text) <= available_w and fm.height() <= available_h:
                 return size
-
+        # Fallback small font size if nothing fits
         return 16
 
     def _update_category_banner_style(self) -> None:
@@ -152,12 +151,13 @@ class CluePanel(QWidget):
         self.set_unlock_lights(False)
 
     def set_question(self, question: Question) -> None:
+        """Displays clue text and metadata pills"""
         self.category_text = (question.category or "").upper()
         self._update_category_banner_style()
         self.main_text.setText((question.clue_text or "").upper())
 
         round_label = question.round or "J"
-        self.round_pill.setText(f"{round_label[:1].upper()}")
+        self.round_pill.setText(f"{round_label[:1].upper()}") # DJ or J, or F
         self.value_pill.setText(f"${question.value}" if question.value else "$???")
 
         if question.air_date is not None:
@@ -173,9 +173,3 @@ class CluePanel(QWidget):
     def set_unlock_lights(self, active: bool) -> None:
         self.left_dots.set_active(active)
         self.right_dots.set_active(active)
-
-
-
-    def debug_card_widget(self) -> QWidget:
-            """Return the visible clue-card widget used for alignment debugging."""
-            return self.card

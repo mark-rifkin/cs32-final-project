@@ -1,14 +1,6 @@
 from __future__ import annotations
 
 """Shared colors, metrics, and stylesheet helpers for the GUI.
-
-This file keeps the visual system in one place:
-- global color palette
-- window-size-derived measurements
-- reusable button/card/banner styles
-
-Button shadows are intentionally not used. They add repaint complexity and made
-hover behavior less reliable.
 """
 
 from dataclasses import dataclass
@@ -17,6 +9,7 @@ from PySide6.QtCore import QSize
 from PySide6.QtWidgets import QWidget
 
 
+# Theme colors
 COLORS = {
     "bg": "#00145e",
     "panel": "#0a22b8",
@@ -110,9 +103,8 @@ def metrics_for(size: QSize) -> Metrics:
         gap=gap,
         rail_width=clamp(w * 0.16, 170, 230),
         timer_strip_w=clamp(w * 0.30, 260, 420),
-        # Kept for compatibility; ActionRail now mirrors the clue-card layout
-        # structurally instead of using margin math.
-        action_margin_w=0,
+        action_margin_w=clamp(short * 0.014, 8, 14),
+
 
         banner_h=banner_h,
         banner_radius=clamp(short * 0.03, 20, 32),
@@ -155,14 +147,10 @@ def metrics_for(size: QSize) -> Metrics:
 
         shadow_offset_y=0,
         shadow_blur=0,
+
     )
 
-
-def apply_button_shadow(widget: QWidget, m: Metrics) -> None:
-    """No-op helper kept for compatibility with older call sites."""
-    widget.setGraphicsEffect(None)
-
-
+# Styling for the category banner
 def banner_qss(m: Metrics, font_size: int | None = None) -> str:
     font_size = font_size or m.banner_font
     return f"""
@@ -176,11 +164,11 @@ def banner_qss(m: Metrics, font_size: int | None = None) -> str:
     padding:4px {m.banner_pad_h}px;
     """
 
-
+# Styling for the clue card
 def card_qss(m: Metrics) -> str:
     return f"background:{COLORS['panel']}; border-radius:{m.card_radius}px;"
 
-
+# Styling for the clue card text
 def clue_text_qss(m: Metrics) -> str:
     return (
         f"color:{COLORS['text']}; "
@@ -189,7 +177,7 @@ def clue_text_qss(m: Metrics) -> str:
         "font-weight:600;"
     )
 
-
+# Styling for the metadata pills
 def pill_qss(m: Metrics, fg: str) -> str:
     return f"""
     background:{COLORS['pill_bg']};
@@ -202,7 +190,7 @@ def pill_qss(m: Metrics, fg: str) -> str:
     font-weight:700;
     """
 
-
+# Styling for the action (ie buzz) buttons
 def action_button_qss(m: Metrics, fg: str | None = None, bg: str | None = None, font_size: int | None = None) -> str:
     fg = fg or COLORS["text"]
     bg = bg or COLORS["panel"]
@@ -231,9 +219,8 @@ def action_button_qss(m: Metrics, fg: str | None = None, bg: str | None = None, 
     }}
     """
 
-
+# Styling for the large Start button on intro
 def intro_start_button_qss(m: Metrics) -> str:
-    """Large intro Start tile style."""
     return f"""
     QPushButton {{
         background:{COLORS['panel']};
@@ -261,7 +248,7 @@ def intro_start_button_qss(m: Metrics) -> str:
     }}
     """
 
-
+# Styling for check/x buttons
 def symbol_button_qss(m: Metrics, fg: str, font_size: int | None = None) -> str:
     font_size = font_size or m.symbol_font
     return f"""

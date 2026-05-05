@@ -2,14 +2,10 @@ from __future__ import annotations
 
 """Bottom action rail for the game screen.
 
-The rail is structurally aligned with the clue card by using the same layout
-shape as the clue panel:
+The rail uses the same shape as the clue panel
 
     side gutter | main rail area | side gutter
-
-This is more reliable than trying to compute a left/right margin by hand. The
-visible buttons live inside the main rail area, so their outer edges should line
-up with the visible clue card edges.
+ The visible buttons live inside the main rail area, so their outer edges should line up with the visible clue card edges.
 """
 
 from PySide6.QtCore import Qt, Signal
@@ -104,6 +100,7 @@ class ActionRail(QWidget):
         self.root.setContentsMargins(0, 0, 0, 0)
         self.center_layout.setSpacing(m.gap)
 
+        # In debugging the center area was 9px too wide on each side, so this makes the rail edges match the clue-card edges.
         rail_edge_correction = 9
         dot_gutter_w = max(m.side_dot_size + 2, m.side_gutter_w // 2)
 
@@ -142,6 +139,7 @@ class ActionRail(QWidget):
         self.set_mode(self.mode)
 
     def _clear_center_layout(self) -> None:
+        # Remove existing widgets from layout (for changing mode)
         while self.center_layout.count():
             item = self.center_layout.takeAt(0)
             widget = item.widget()
@@ -149,7 +147,7 @@ class ActionRail(QWidget):
                 widget.setParent(None)
 
     def set_mode(self, mode: str) -> None:
-        """Switch which widgets are shown in the bottom rail."""
+        """Switch which widgets are shown in the bottom rail as dictated by the controller."""
         self.mode = mode
         self._clear_center_layout()
 
@@ -165,13 +163,13 @@ class ActionRail(QWidget):
             self.center_layout.addStretch(1)
             self.center_layout.addWidget(self.primary_button)
         elif mode == "answer":
-            # Menu and Answer have equal width, so equal stretches keep the
-            # countdown lights centered within the same card-width area.
+            # Keeps timer centered between menu and answer (equal stretches)
             self.center_layout.addStretch(1)
             self.center_layout.addWidget(self.answer_strip, alignment=Qt.AlignmentFlag.AlignCenter)
             self.center_layout.addStretch(1)
             self.center_layout.addWidget(self.primary_button)
         elif mode == "reveal_grade":
+            # grading buttons on right side of rail
             self.center_layout.addStretch(1)
             self.center_layout.addWidget(self.wrong_button)
             self.center_layout.addWidget(self.right_button)
@@ -232,9 +230,7 @@ class ActionRail(QWidget):
         self.answer_strip.set_phase_active(active)
 
     def set_answer_light_count(self, count: int) -> None:
-        # Do not rebuild the rail here. Rebuilding during the countdown was the
-        # source of the broken light sequence.
-        self.answer_strip.set_active_count(count)
+            self.answer_strip.set_active_count(count)
 
     def debug_main_area_widget(self) -> QWidget:
         """Return the visible action area used for alignment debugging."""
